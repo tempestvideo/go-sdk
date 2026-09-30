@@ -1409,6 +1409,187 @@ func (x *UpsertProfileResponse) GetProfile() *Profile {
 	return nil
 }
 
+// Sets the caller's name. An empty name clears it. Email can't be changed
+// here.
+type UpdateProfileRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FirstName     string                 `protobuf:"bytes,1,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
+	LastName      string                 `protobuf:"bytes,2,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateProfileRequest) Reset() {
+	*x = UpdateProfileRequest{}
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateProfileRequest) ProtoMessage() {}
+
+func (x *UpdateProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateProfileRequest.ProtoReflect.Descriptor instead.
+func (*UpdateProfileRequest) Descriptor() ([]byte, []int) {
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *UpdateProfileRequest) GetFirstName() string {
+	if x != nil {
+		return x.FirstName
+	}
+	return ""
+}
+
+func (x *UpdateProfileRequest) GetLastName() string {
+	if x != nil {
+		return x.LastName
+	}
+	return ""
+}
+
+type UpdateProfileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Profile       *Profile               `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateProfileResponse) Reset() {
+	*x = UpdateProfileResponse{}
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateProfileResponse) ProtoMessage() {}
+
+func (x *UpdateProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateProfileResponse.ProtoReflect.Descriptor instead.
+func (*UpdateProfileResponse) Descriptor() ([]byte, []int) {
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *UpdateProfileResponse) GetProfile() *Profile {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+// Sets the caller's sign-in password, replacing any they had. Anyone who
+// signs in with an emailed code can add one this way. Signed-in sessions
+// only: API keys can't. The sign-in provider checks its strength.
+type SetPasswordRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Password      string                 `protobuf:"bytes,1,opt,name=password,proto3" json:"password,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetPasswordRequest) Reset() {
+	*x = SetPasswordRequest{}
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetPasswordRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetPasswordRequest) ProtoMessage() {}
+
+func (x *SetPasswordRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetPasswordRequest.ProtoReflect.Descriptor instead.
+func (*SetPasswordRequest) Descriptor() ([]byte, []int) {
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *SetPasswordRequest) GetPassword() string {
+	if x != nil {
+		return x.Password
+	}
+	return ""
+}
+
+type SetPasswordResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetPasswordResponse) Reset() {
+	*x = SetPasswordResponse{}
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetPasswordResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetPasswordResponse) ProtoMessage() {}
+
+func (x *SetPasswordResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetPasswordResponse.ProtoReflect.Descriptor instead.
+func (*SetPasswordResponse) Descriptor() ([]byte, []int) {
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{17}
+}
+
 // A tenant plus the caller's effective role on it
 // (SYSTEM_ADMIN, TENANT_ADMIN, or UNSPECIFIED when they only see it via an installation).
 type TenantAccess struct {
@@ -1421,7 +1602,7 @@ type TenantAccess struct {
 
 func (x *TenantAccess) Reset() {
 	*x = TenantAccess{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[14]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1433,7 +1614,7 @@ func (x *TenantAccess) String() string {
 func (*TenantAccess) ProtoMessage() {}
 
 func (x *TenantAccess) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[14]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1446,7 +1627,7 @@ func (x *TenantAccess) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TenantAccess.ProtoReflect.Descriptor instead.
 func (*TenantAccess) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{14}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *TenantAccess) GetTenant() *Tenant {
@@ -1474,7 +1655,7 @@ type InstallationAccess struct {
 
 func (x *InstallationAccess) Reset() {
 	*x = InstallationAccess{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[15]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1486,7 +1667,7 @@ func (x *InstallationAccess) String() string {
 func (*InstallationAccess) ProtoMessage() {}
 
 func (x *InstallationAccess) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[15]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1499,7 +1680,7 @@ func (x *InstallationAccess) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstallationAccess.ProtoReflect.Descriptor instead.
 func (*InstallationAccess) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{15}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *InstallationAccess) GetInstallation() *Installation {
@@ -1524,7 +1705,7 @@ type ListTenantsRequest struct {
 
 func (x *ListTenantsRequest) Reset() {
 	*x = ListTenantsRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[16]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1536,7 +1717,7 @@ func (x *ListTenantsRequest) String() string {
 func (*ListTenantsRequest) ProtoMessage() {}
 
 func (x *ListTenantsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[16]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1549,7 +1730,7 @@ func (x *ListTenantsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTenantsRequest.ProtoReflect.Descriptor instead.
 func (*ListTenantsRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{16}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{20}
 }
 
 type ListTenantsResponse struct {
@@ -1561,7 +1742,7 @@ type ListTenantsResponse struct {
 
 func (x *ListTenantsResponse) Reset() {
 	*x = ListTenantsResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[17]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1573,7 +1754,7 @@ func (x *ListTenantsResponse) String() string {
 func (*ListTenantsResponse) ProtoMessage() {}
 
 func (x *ListTenantsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[17]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1586,7 +1767,7 @@ func (x *ListTenantsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTenantsResponse.ProtoReflect.Descriptor instead.
 func (*ListTenantsResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{17}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ListTenantsResponse) GetTenants() []*TenantAccess {
@@ -1606,7 +1787,7 @@ type UpdateTenantRequest struct {
 
 func (x *UpdateTenantRequest) Reset() {
 	*x = UpdateTenantRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[18]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1618,7 +1799,7 @@ func (x *UpdateTenantRequest) String() string {
 func (*UpdateTenantRequest) ProtoMessage() {}
 
 func (x *UpdateTenantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[18]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1631,7 +1812,7 @@ func (x *UpdateTenantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTenantRequest.ProtoReflect.Descriptor instead.
 func (*UpdateTenantRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{18}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *UpdateTenantRequest) GetTenantId() string {
@@ -1657,7 +1838,7 @@ type UpdateTenantResponse struct {
 
 func (x *UpdateTenantResponse) Reset() {
 	*x = UpdateTenantResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[19]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1669,7 +1850,7 @@ func (x *UpdateTenantResponse) String() string {
 func (*UpdateTenantResponse) ProtoMessage() {}
 
 func (x *UpdateTenantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[19]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1682,7 +1863,7 @@ func (x *UpdateTenantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateTenantResponse.ProtoReflect.Descriptor instead.
 func (*UpdateTenantResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{19}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *UpdateTenantResponse) GetTenant() *Tenant {
@@ -1702,7 +1883,7 @@ type ListInstallationsRequest struct {
 
 func (x *ListInstallationsRequest) Reset() {
 	*x = ListInstallationsRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[20]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1714,7 +1895,7 @@ func (x *ListInstallationsRequest) String() string {
 func (*ListInstallationsRequest) ProtoMessage() {}
 
 func (x *ListInstallationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[20]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1727,7 +1908,7 @@ func (x *ListInstallationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListInstallationsRequest.ProtoReflect.Descriptor instead.
 func (*ListInstallationsRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{20}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *ListInstallationsRequest) GetTenantId() string {
@@ -1746,7 +1927,7 @@ type ListInstallationsResponse struct {
 
 func (x *ListInstallationsResponse) Reset() {
 	*x = ListInstallationsResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[21]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1758,7 +1939,7 @@ func (x *ListInstallationsResponse) String() string {
 func (*ListInstallationsResponse) ProtoMessage() {}
 
 func (x *ListInstallationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[21]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1771,7 +1952,7 @@ func (x *ListInstallationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListInstallationsResponse.ProtoReflect.Descriptor instead.
 func (*ListInstallationsResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{21}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ListInstallationsResponse) GetInstallations() []*InstallationAccess {
@@ -1790,7 +1971,7 @@ type GetInstallationRequest struct {
 
 func (x *GetInstallationRequest) Reset() {
 	*x = GetInstallationRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[22]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1802,7 +1983,7 @@ func (x *GetInstallationRequest) String() string {
 func (*GetInstallationRequest) ProtoMessage() {}
 
 func (x *GetInstallationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[22]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1815,7 +1996,7 @@ func (x *GetInstallationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetInstallationRequest.ProtoReflect.Descriptor instead.
 func (*GetInstallationRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{22}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *GetInstallationRequest) GetInstallationId() string {
@@ -1835,7 +2016,7 @@ type GetInstallationResponse struct {
 
 func (x *GetInstallationResponse) Reset() {
 	*x = GetInstallationResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[23]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1847,7 +2028,7 @@ func (x *GetInstallationResponse) String() string {
 func (*GetInstallationResponse) ProtoMessage() {}
 
 func (x *GetInstallationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[23]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1860,7 +2041,7 @@ func (x *GetInstallationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetInstallationResponse.ProtoReflect.Descriptor instead.
 func (*GetInstallationResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{23}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetInstallationResponse) GetInstallation() *InstallationAccess {
@@ -1887,7 +2068,7 @@ type UpdateInstallationRequest struct {
 
 func (x *UpdateInstallationRequest) Reset() {
 	*x = UpdateInstallationRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[24]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1899,7 +2080,7 @@ func (x *UpdateInstallationRequest) String() string {
 func (*UpdateInstallationRequest) ProtoMessage() {}
 
 func (x *UpdateInstallationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[24]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1912,7 +2093,7 @@ func (x *UpdateInstallationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateInstallationRequest.ProtoReflect.Descriptor instead.
 func (*UpdateInstallationRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{24}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *UpdateInstallationRequest) GetInstallationId() string {
@@ -1938,7 +2119,7 @@ type UpdateInstallationResponse struct {
 
 func (x *UpdateInstallationResponse) Reset() {
 	*x = UpdateInstallationResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[25]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1950,7 +2131,7 @@ func (x *UpdateInstallationResponse) String() string {
 func (*UpdateInstallationResponse) ProtoMessage() {}
 
 func (x *UpdateInstallationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[25]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1963,7 +2144,7 @@ func (x *UpdateInstallationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateInstallationResponse.ProtoReflect.Descriptor instead.
 func (*UpdateInstallationResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{25}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *UpdateInstallationResponse) GetInstallation() *Installation {
@@ -1982,7 +2163,7 @@ type DeleteInstallationRequest struct {
 
 func (x *DeleteInstallationRequest) Reset() {
 	*x = DeleteInstallationRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[26]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1994,7 +2175,7 @@ func (x *DeleteInstallationRequest) String() string {
 func (*DeleteInstallationRequest) ProtoMessage() {}
 
 func (x *DeleteInstallationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[26]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2007,7 +2188,7 @@ func (x *DeleteInstallationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteInstallationRequest.ProtoReflect.Descriptor instead.
 func (*DeleteInstallationRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{26}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *DeleteInstallationRequest) GetInstallationId() string {
@@ -2025,7 +2206,7 @@ type DeleteInstallationResponse struct {
 
 func (x *DeleteInstallationResponse) Reset() {
 	*x = DeleteInstallationResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[27]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2037,7 +2218,7 @@ func (x *DeleteInstallationResponse) String() string {
 func (*DeleteInstallationResponse) ProtoMessage() {}
 
 func (x *DeleteInstallationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[27]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2050,7 +2231,7 @@ func (x *DeleteInstallationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteInstallationResponse.ProtoReflect.Descriptor instead.
 func (*DeleteInstallationResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{27}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{31}
 }
 
 type RenameConnectorRequest struct {
@@ -2063,7 +2244,7 @@ type RenameConnectorRequest struct {
 
 func (x *RenameConnectorRequest) Reset() {
 	*x = RenameConnectorRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[28]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2075,7 +2256,7 @@ func (x *RenameConnectorRequest) String() string {
 func (*RenameConnectorRequest) ProtoMessage() {}
 
 func (x *RenameConnectorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[28]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2088,7 +2269,7 @@ func (x *RenameConnectorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RenameConnectorRequest.ProtoReflect.Descriptor instead.
 func (*RenameConnectorRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{28}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *RenameConnectorRequest) GetConnectorId() string {
@@ -2113,7 +2294,7 @@ type RenameConnectorResponse struct {
 
 func (x *RenameConnectorResponse) Reset() {
 	*x = RenameConnectorResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[29]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2125,7 +2306,7 @@ func (x *RenameConnectorResponse) String() string {
 func (*RenameConnectorResponse) ProtoMessage() {}
 
 func (x *RenameConnectorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[29]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2138,7 +2319,7 @@ func (x *RenameConnectorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RenameConnectorResponse.ProtoReflect.Descriptor instead.
 func (*RenameConnectorResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{29}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{33}
 }
 
 // Permanently deletes a connector. It must already be revoked and have no
@@ -2152,7 +2333,7 @@ type DeleteConnectorRequest struct {
 
 func (x *DeleteConnectorRequest) Reset() {
 	*x = DeleteConnectorRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[30]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2164,7 +2345,7 @@ func (x *DeleteConnectorRequest) String() string {
 func (*DeleteConnectorRequest) ProtoMessage() {}
 
 func (x *DeleteConnectorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[30]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2177,7 +2358,7 @@ func (x *DeleteConnectorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteConnectorRequest.ProtoReflect.Descriptor instead.
 func (*DeleteConnectorRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{30}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *DeleteConnectorRequest) GetConnectorId() string {
@@ -2195,7 +2376,7 @@ type DeleteConnectorResponse struct {
 
 func (x *DeleteConnectorResponse) Reset() {
 	*x = DeleteConnectorResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[31]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2207,7 +2388,7 @@ func (x *DeleteConnectorResponse) String() string {
 func (*DeleteConnectorResponse) ProtoMessage() {}
 
 func (x *DeleteConnectorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[31]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2220,7 +2401,7 @@ func (x *DeleteConnectorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteConnectorResponse.ProtoReflect.Descriptor instead.
 func (*DeleteConnectorResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{31}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{35}
 }
 
 type ListConnectorsRequest struct {
@@ -2232,7 +2413,7 @@ type ListConnectorsRequest struct {
 
 func (x *ListConnectorsRequest) Reset() {
 	*x = ListConnectorsRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[32]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2244,7 +2425,7 @@ func (x *ListConnectorsRequest) String() string {
 func (*ListConnectorsRequest) ProtoMessage() {}
 
 func (x *ListConnectorsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[32]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2257,7 +2438,7 @@ func (x *ListConnectorsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListConnectorsRequest.ProtoReflect.Descriptor instead.
 func (*ListConnectorsRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{32}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *ListConnectorsRequest) GetInstallationId() string {
@@ -2276,7 +2457,7 @@ type ListConnectorsResponse struct {
 
 func (x *ListConnectorsResponse) Reset() {
 	*x = ListConnectorsResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[33]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2288,7 +2469,7 @@ func (x *ListConnectorsResponse) String() string {
 func (*ListConnectorsResponse) ProtoMessage() {}
 
 func (x *ListConnectorsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[33]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2301,7 +2482,7 @@ func (x *ListConnectorsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListConnectorsResponse.ProtoReflect.Descriptor instead.
 func (*ListConnectorsResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{33}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *ListConnectorsResponse) GetConnectors() []*Connector {
@@ -2325,7 +2506,7 @@ type ChannelSource struct {
 
 func (x *ChannelSource) Reset() {
 	*x = ChannelSource{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[34]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2337,7 +2518,7 @@ func (x *ChannelSource) String() string {
 func (*ChannelSource) ProtoMessage() {}
 
 func (x *ChannelSource) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[34]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2350,7 +2531,7 @@ func (x *ChannelSource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelSource.ProtoReflect.Descriptor instead.
 func (*ChannelSource) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{34}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *ChannelSource) GetName() string {
@@ -2407,7 +2588,7 @@ type Channel struct {
 
 func (x *Channel) Reset() {
 	*x = Channel{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[35]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2419,7 +2600,7 @@ func (x *Channel) String() string {
 func (*Channel) ProtoMessage() {}
 
 func (x *Channel) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[35]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2432,7 +2613,7 @@ func (x *Channel) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Channel.ProtoReflect.Descriptor instead.
 func (*Channel) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{35}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *Channel) GetId() string {
@@ -2515,7 +2696,7 @@ type ChannelAvailability struct {
 
 func (x *ChannelAvailability) Reset() {
 	*x = ChannelAvailability{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[36]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2527,7 +2708,7 @@ func (x *ChannelAvailability) String() string {
 func (*ChannelAvailability) ProtoMessage() {}
 
 func (x *ChannelAvailability) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[36]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2540,7 +2721,7 @@ func (x *ChannelAvailability) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelAvailability.ProtoReflect.Descriptor instead.
 func (*ChannelAvailability) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{36}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *ChannelAvailability) GetConnectorId() string {
@@ -2565,7 +2746,7 @@ type NoAuth struct {
 
 func (x *NoAuth) Reset() {
 	*x = NoAuth{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[37]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2577,7 +2758,7 @@ func (x *NoAuth) String() string {
 func (*NoAuth) ProtoMessage() {}
 
 func (x *NoAuth) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[37]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2590,7 +2771,7 @@ func (x *NoAuth) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NoAuth.ProtoReflect.Descriptor instead.
 func (*NoAuth) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{37}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{41}
 }
 
 type UsernamePasswordAuth struct {
@@ -2603,7 +2784,7 @@ type UsernamePasswordAuth struct {
 
 func (x *UsernamePasswordAuth) Reset() {
 	*x = UsernamePasswordAuth{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[38]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2615,7 +2796,7 @@ func (x *UsernamePasswordAuth) String() string {
 func (*UsernamePasswordAuth) ProtoMessage() {}
 
 func (x *UsernamePasswordAuth) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[38]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2628,7 +2809,7 @@ func (x *UsernamePasswordAuth) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UsernamePasswordAuth.ProtoReflect.Descriptor instead.
 func (*UsernamePasswordAuth) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{38}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *UsernamePasswordAuth) GetUsername() string {
@@ -2654,7 +2835,7 @@ type ApiKeyAuth struct {
 
 func (x *ApiKeyAuth) Reset() {
 	*x = ApiKeyAuth{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[39]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2666,7 +2847,7 @@ func (x *ApiKeyAuth) String() string {
 func (*ApiKeyAuth) ProtoMessage() {}
 
 func (x *ApiKeyAuth) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[39]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2679,7 +2860,7 @@ func (x *ApiKeyAuth) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiKeyAuth.ProtoReflect.Descriptor instead.
 func (*ApiKeyAuth) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{39}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *ApiKeyAuth) GetApiKey() string {
@@ -2706,7 +2887,7 @@ type DeviceCredentials struct {
 
 func (x *DeviceCredentials) Reset() {
 	*x = DeviceCredentials{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[40]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2718,7 +2899,7 @@ func (x *DeviceCredentials) String() string {
 func (*DeviceCredentials) ProtoMessage() {}
 
 func (x *DeviceCredentials) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[40]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2731,7 +2912,7 @@ func (x *DeviceCredentials) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceCredentials.ProtoReflect.Descriptor instead.
 func (*DeviceCredentials) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{40}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *DeviceCredentials) GetMethod() isDeviceCredentials_Method {
@@ -2822,7 +3003,7 @@ type Device struct {
 
 func (x *Device) Reset() {
 	*x = Device{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[41]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2834,7 +3015,7 @@ func (x *Device) String() string {
 func (*Device) ProtoMessage() {}
 
 func (x *Device) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[41]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2847,7 +3028,7 @@ func (x *Device) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Device.ProtoReflect.Descriptor instead.
 func (*Device) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{41}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *Device) GetId() string {
@@ -2964,7 +3145,7 @@ type ListChannelsRequest struct {
 
 func (x *ListChannelsRequest) Reset() {
 	*x = ListChannelsRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[42]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2976,7 +3157,7 @@ func (x *ListChannelsRequest) String() string {
 func (*ListChannelsRequest) ProtoMessage() {}
 
 func (x *ListChannelsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[42]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2989,7 +3170,7 @@ func (x *ListChannelsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListChannelsRequest.ProtoReflect.Descriptor instead.
 func (*ListChannelsRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{42}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *ListChannelsRequest) GetInstallationId() string {
@@ -3008,7 +3189,7 @@ type ListChannelsResponse struct {
 
 func (x *ListChannelsResponse) Reset() {
 	*x = ListChannelsResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[43]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3020,7 +3201,7 @@ func (x *ListChannelsResponse) String() string {
 func (*ListChannelsResponse) ProtoMessage() {}
 
 func (x *ListChannelsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[43]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3033,7 +3214,7 @@ func (x *ListChannelsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListChannelsResponse.ProtoReflect.Descriptor instead.
 func (*ListChannelsResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{43}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *ListChannelsResponse) GetChannels() []*Channel {
@@ -3055,7 +3236,7 @@ type CreateChannelRequest struct {
 
 func (x *CreateChannelRequest) Reset() {
 	*x = CreateChannelRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[44]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3067,7 +3248,7 @@ func (x *CreateChannelRequest) String() string {
 func (*CreateChannelRequest) ProtoMessage() {}
 
 func (x *CreateChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[44]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3080,7 +3261,7 @@ func (x *CreateChannelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateChannelRequest.ProtoReflect.Descriptor instead.
 func (*CreateChannelRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{44}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *CreateChannelRequest) GetInstallationId() string {
@@ -3120,7 +3301,7 @@ type CreateChannelResponse struct {
 
 func (x *CreateChannelResponse) Reset() {
 	*x = CreateChannelResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[45]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3132,7 +3313,7 @@ func (x *CreateChannelResponse) String() string {
 func (*CreateChannelResponse) ProtoMessage() {}
 
 func (x *CreateChannelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[45]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3145,7 +3326,7 @@ func (x *CreateChannelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateChannelResponse.ProtoReflect.Descriptor instead.
 func (*CreateChannelResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{45}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *CreateChannelResponse) GetChannel() *Channel {
@@ -3168,7 +3349,7 @@ type UpdateChannelRequest struct {
 
 func (x *UpdateChannelRequest) Reset() {
 	*x = UpdateChannelRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[46]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3180,7 +3361,7 @@ func (x *UpdateChannelRequest) String() string {
 func (*UpdateChannelRequest) ProtoMessage() {}
 
 func (x *UpdateChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[46]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3193,7 +3374,7 @@ func (x *UpdateChannelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateChannelRequest.ProtoReflect.Descriptor instead.
 func (*UpdateChannelRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{46}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *UpdateChannelRequest) GetChannelId() string {
@@ -3233,7 +3414,7 @@ type UpdateChannelResponse struct {
 
 func (x *UpdateChannelResponse) Reset() {
 	*x = UpdateChannelResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[47]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3245,7 +3426,7 @@ func (x *UpdateChannelResponse) String() string {
 func (*UpdateChannelResponse) ProtoMessage() {}
 
 func (x *UpdateChannelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[47]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3258,7 +3439,7 @@ func (x *UpdateChannelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateChannelResponse.ProtoReflect.Descriptor instead.
 func (*UpdateChannelResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{47}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *UpdateChannelResponse) GetChannel() *Channel {
@@ -3277,7 +3458,7 @@ type DeleteChannelRequest struct {
 
 func (x *DeleteChannelRequest) Reset() {
 	*x = DeleteChannelRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[48]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3289,7 +3470,7 @@ func (x *DeleteChannelRequest) String() string {
 func (*DeleteChannelRequest) ProtoMessage() {}
 
 func (x *DeleteChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[48]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3302,7 +3483,7 @@ func (x *DeleteChannelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteChannelRequest.ProtoReflect.Descriptor instead.
 func (*DeleteChannelRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{48}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *DeleteChannelRequest) GetChannelId() string {
@@ -3320,7 +3501,7 @@ type DeleteChannelResponse struct {
 
 func (x *DeleteChannelResponse) Reset() {
 	*x = DeleteChannelResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[49]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3332,7 +3513,7 @@ func (x *DeleteChannelResponse) String() string {
 func (*DeleteChannelResponse) ProtoMessage() {}
 
 func (x *DeleteChannelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[49]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3345,7 +3526,7 @@ func (x *DeleteChannelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteChannelResponse.ProtoReflect.Descriptor instead.
 func (*DeleteChannelResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{49}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{53}
 }
 
 // Sets a channel's icon. The image (PNG, JPEG, GIF or WebP, up to 1 MiB and
@@ -3361,7 +3542,7 @@ type SetChannelIconRequest struct {
 
 func (x *SetChannelIconRequest) Reset() {
 	*x = SetChannelIconRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[50]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3373,7 +3554,7 @@ func (x *SetChannelIconRequest) String() string {
 func (*SetChannelIconRequest) ProtoMessage() {}
 
 func (x *SetChannelIconRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[50]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3386,7 +3567,7 @@ func (x *SetChannelIconRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetChannelIconRequest.ProtoReflect.Descriptor instead.
 func (*SetChannelIconRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{50}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *SetChannelIconRequest) GetChannelId() string {
@@ -3412,7 +3593,7 @@ type SetChannelIconResponse struct {
 
 func (x *SetChannelIconResponse) Reset() {
 	*x = SetChannelIconResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[51]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3424,7 +3605,7 @@ func (x *SetChannelIconResponse) String() string {
 func (*SetChannelIconResponse) ProtoMessage() {}
 
 func (x *SetChannelIconResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[51]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3437,7 +3618,7 @@ func (x *SetChannelIconResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetChannelIconResponse.ProtoReflect.Descriptor instead.
 func (*SetChannelIconResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{51}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *SetChannelIconResponse) GetChannel() *Channel {
@@ -3456,7 +3637,7 @@ type DeleteChannelIconRequest struct {
 
 func (x *DeleteChannelIconRequest) Reset() {
 	*x = DeleteChannelIconRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[52]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3468,7 +3649,7 @@ func (x *DeleteChannelIconRequest) String() string {
 func (*DeleteChannelIconRequest) ProtoMessage() {}
 
 func (x *DeleteChannelIconRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[52]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3481,7 +3662,7 @@ func (x *DeleteChannelIconRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteChannelIconRequest.ProtoReflect.Descriptor instead.
 func (*DeleteChannelIconRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{52}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *DeleteChannelIconRequest) GetChannelId() string {
@@ -3500,7 +3681,7 @@ type DeleteChannelIconResponse struct {
 
 func (x *DeleteChannelIconResponse) Reset() {
 	*x = DeleteChannelIconResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[53]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3512,7 +3693,7 @@ func (x *DeleteChannelIconResponse) String() string {
 func (*DeleteChannelIconResponse) ProtoMessage() {}
 
 func (x *DeleteChannelIconResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[53]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3525,7 +3706,7 @@ func (x *DeleteChannelIconResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteChannelIconResponse.ProtoReflect.Descriptor instead.
 func (*DeleteChannelIconResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{53}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *DeleteChannelIconResponse) GetChannel() *Channel {
@@ -3544,7 +3725,7 @@ type ListDevicesRequest struct {
 
 func (x *ListDevicesRequest) Reset() {
 	*x = ListDevicesRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[54]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3556,7 +3737,7 @@ func (x *ListDevicesRequest) String() string {
 func (*ListDevicesRequest) ProtoMessage() {}
 
 func (x *ListDevicesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[54]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3569,7 +3750,7 @@ func (x *ListDevicesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDevicesRequest.ProtoReflect.Descriptor instead.
 func (*ListDevicesRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{54}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *ListDevicesRequest) GetInstallationId() string {
@@ -3589,7 +3770,7 @@ type ListDevicesResponse struct {
 
 func (x *ListDevicesResponse) Reset() {
 	*x = ListDevicesResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[55]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3601,7 +3782,7 @@ func (x *ListDevicesResponse) String() string {
 func (*ListDevicesResponse) ProtoMessage() {}
 
 func (x *ListDevicesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[55]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3614,7 +3795,7 @@ func (x *ListDevicesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDevicesResponse.ProtoReflect.Descriptor instead.
 func (*ListDevicesResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{55}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *ListDevicesResponse) GetDevices() []*Device {
@@ -3639,7 +3820,7 @@ type CreateDeviceRequest struct {
 
 func (x *CreateDeviceRequest) Reset() {
 	*x = CreateDeviceRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[56]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3651,7 +3832,7 @@ func (x *CreateDeviceRequest) String() string {
 func (*CreateDeviceRequest) ProtoMessage() {}
 
 func (x *CreateDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[56]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3664,7 +3845,7 @@ func (x *CreateDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDeviceRequest.ProtoReflect.Descriptor instead.
 func (*CreateDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{56}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *CreateDeviceRequest) GetInstallationId() string {
@@ -3718,7 +3899,7 @@ type CreateDeviceResponse struct {
 
 func (x *CreateDeviceResponse) Reset() {
 	*x = CreateDeviceResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[57]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3730,7 +3911,7 @@ func (x *CreateDeviceResponse) String() string {
 func (*CreateDeviceResponse) ProtoMessage() {}
 
 func (x *CreateDeviceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[57]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3743,7 +3924,7 @@ func (x *CreateDeviceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDeviceResponse.ProtoReflect.Descriptor instead.
 func (*CreateDeviceResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{57}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *CreateDeviceResponse) GetDevice() *Device {
@@ -3770,7 +3951,7 @@ type UpdateDeviceRequest struct {
 
 func (x *UpdateDeviceRequest) Reset() {
 	*x = UpdateDeviceRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[58]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3782,7 +3963,7 @@ func (x *UpdateDeviceRequest) String() string {
 func (*UpdateDeviceRequest) ProtoMessage() {}
 
 func (x *UpdateDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[58]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3795,7 +3976,7 @@ func (x *UpdateDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{58}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *UpdateDeviceRequest) GetDeviceId() string {
@@ -3849,7 +4030,7 @@ type UpdateDeviceResponse struct {
 
 func (x *UpdateDeviceResponse) Reset() {
 	*x = UpdateDeviceResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[59]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3861,7 +4042,7 @@ func (x *UpdateDeviceResponse) String() string {
 func (*UpdateDeviceResponse) ProtoMessage() {}
 
 func (x *UpdateDeviceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[59]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3874,7 +4055,7 @@ func (x *UpdateDeviceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceResponse.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{59}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *UpdateDeviceResponse) GetDevice() *Device {
@@ -3893,7 +4074,7 @@ type DeleteDeviceRequest struct {
 
 func (x *DeleteDeviceRequest) Reset() {
 	*x = DeleteDeviceRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[60]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3905,7 +4086,7 @@ func (x *DeleteDeviceRequest) String() string {
 func (*DeleteDeviceRequest) ProtoMessage() {}
 
 func (x *DeleteDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[60]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3918,7 +4099,7 @@ func (x *DeleteDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDeviceRequest.ProtoReflect.Descriptor instead.
 func (*DeleteDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{60}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *DeleteDeviceRequest) GetDeviceId() string {
@@ -3936,7 +4117,7 @@ type DeleteDeviceResponse struct {
 
 func (x *DeleteDeviceResponse) Reset() {
 	*x = DeleteDeviceResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[61]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3948,7 +4129,7 @@ func (x *DeleteDeviceResponse) String() string {
 func (*DeleteDeviceResponse) ProtoMessage() {}
 
 func (x *DeleteDeviceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[61]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3961,7 +4142,7 @@ func (x *DeleteDeviceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDeviceResponse.ProtoReflect.Descriptor instead.
 func (*DeleteDeviceResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{61}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{65}
 }
 
 type SetDeviceChannelRequest struct {
@@ -3974,7 +4155,7 @@ type SetDeviceChannelRequest struct {
 
 func (x *SetDeviceChannelRequest) Reset() {
 	*x = SetDeviceChannelRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[62]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3986,7 +4167,7 @@ func (x *SetDeviceChannelRequest) String() string {
 func (*SetDeviceChannelRequest) ProtoMessage() {}
 
 func (x *SetDeviceChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[62]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3999,7 +4180,7 @@ func (x *SetDeviceChannelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetDeviceChannelRequest.ProtoReflect.Descriptor instead.
 func (*SetDeviceChannelRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{62}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *SetDeviceChannelRequest) GetDeviceId() string {
@@ -4035,7 +4216,7 @@ type ChannelRequest struct {
 
 func (x *ChannelRequest) Reset() {
 	*x = ChannelRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[63]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4047,7 +4228,7 @@ func (x *ChannelRequest) String() string {
 func (*ChannelRequest) ProtoMessage() {}
 
 func (x *ChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[63]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4060,7 +4241,7 @@ func (x *ChannelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelRequest.ProtoReflect.Descriptor instead.
 func (*ChannelRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{63}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *ChannelRequest) GetId() string {
@@ -4131,7 +4312,7 @@ type SetDeviceChannelResponse struct {
 
 func (x *SetDeviceChannelResponse) Reset() {
 	*x = SetDeviceChannelResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[64]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4143,7 +4324,7 @@ func (x *SetDeviceChannelResponse) String() string {
 func (*SetDeviceChannelResponse) ProtoMessage() {}
 
 func (x *SetDeviceChannelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[64]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4156,7 +4337,7 @@ func (x *SetDeviceChannelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetDeviceChannelResponse.ProtoReflect.Descriptor instead.
 func (*SetDeviceChannelResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{64}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *SetDeviceChannelResponse) GetDevice() *Device {
@@ -4182,7 +4363,7 @@ type GetChannelRequestRequest struct {
 
 func (x *GetChannelRequestRequest) Reset() {
 	*x = GetChannelRequestRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[65]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4194,7 +4375,7 @@ func (x *GetChannelRequestRequest) String() string {
 func (*GetChannelRequestRequest) ProtoMessage() {}
 
 func (x *GetChannelRequestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[65]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4207,7 +4388,7 @@ func (x *GetChannelRequestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetChannelRequestRequest.ProtoReflect.Descriptor instead.
 func (*GetChannelRequestRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{65}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *GetChannelRequestRequest) GetRequestId() string {
@@ -4228,7 +4409,7 @@ type GetChannelRequestResponse struct {
 
 func (x *GetChannelRequestResponse) Reset() {
 	*x = GetChannelRequestResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[66]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4240,7 +4421,7 @@ func (x *GetChannelRequestResponse) String() string {
 func (*GetChannelRequestResponse) ProtoMessage() {}
 
 func (x *GetChannelRequestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[66]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4253,7 +4434,7 @@ func (x *GetChannelRequestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetChannelRequestResponse.ProtoReflect.Descriptor instead.
 func (*GetChannelRequestResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{66}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *GetChannelRequestResponse) GetRequest() *ChannelRequest {
@@ -4284,7 +4465,7 @@ type ZeeveeGuideFilter struct {
 
 func (x *ZeeveeGuideFilter) Reset() {
 	*x = ZeeveeGuideFilter{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[67]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4296,7 +4477,7 @@ func (x *ZeeveeGuideFilter) String() string {
 func (*ZeeveeGuideFilter) ProtoMessage() {}
 
 func (x *ZeeveeGuideFilter) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[67]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4309,7 +4490,7 @@ func (x *ZeeveeGuideFilter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ZeeveeGuideFilter.ProtoReflect.Descriptor instead.
 func (*ZeeveeGuideFilter) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{67}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *ZeeveeGuideFilter) GetInclude() *ChannelNumbers {
@@ -4335,7 +4516,7 @@ type ChannelNumbers struct {
 
 func (x *ChannelNumbers) Reset() {
 	*x = ChannelNumbers{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[68]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4347,7 +4528,7 @@ func (x *ChannelNumbers) String() string {
 func (*ChannelNumbers) ProtoMessage() {}
 
 func (x *ChannelNumbers) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[68]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4360,7 +4541,7 @@ func (x *ChannelNumbers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelNumbers.ProtoReflect.Descriptor instead.
 func (*ChannelNumbers) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{68}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *ChannelNumbers) GetNumbers() []uint32 {
@@ -4383,7 +4564,7 @@ type ProvisionDeviceRequest struct {
 
 func (x *ProvisionDeviceRequest) Reset() {
 	*x = ProvisionDeviceRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[69]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4395,7 +4576,7 @@ func (x *ProvisionDeviceRequest) String() string {
 func (*ProvisionDeviceRequest) ProtoMessage() {}
 
 func (x *ProvisionDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[69]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4408,7 +4589,7 @@ func (x *ProvisionDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProvisionDeviceRequest.ProtoReflect.Descriptor instead.
 func (*ProvisionDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{69}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *ProvisionDeviceRequest) GetDeviceId() string {
@@ -4434,7 +4615,7 @@ type ProvisionDeviceResponse struct {
 
 func (x *ProvisionDeviceResponse) Reset() {
 	*x = ProvisionDeviceResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[70]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4446,7 +4627,7 @@ func (x *ProvisionDeviceResponse) String() string {
 func (*ProvisionDeviceResponse) ProtoMessage() {}
 
 func (x *ProvisionDeviceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[70]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4459,7 +4640,7 @@ func (x *ProvisionDeviceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProvisionDeviceResponse.ProtoReflect.Descriptor instead.
 func (*ProvisionDeviceResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{70}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *ProvisionDeviceResponse) GetTask() *DeviceTask {
@@ -4486,7 +4667,7 @@ type DeviceTask struct {
 
 func (x *DeviceTask) Reset() {
 	*x = DeviceTask{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[71]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4498,7 +4679,7 @@ func (x *DeviceTask) String() string {
 func (*DeviceTask) ProtoMessage() {}
 
 func (x *DeviceTask) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[71]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4511,7 +4692,7 @@ func (x *DeviceTask) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceTask.ProtoReflect.Descriptor instead.
 func (*DeviceTask) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{71}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *DeviceTask) GetId() string {
@@ -4565,7 +4746,7 @@ type GetDeviceTaskRequest struct {
 
 func (x *GetDeviceTaskRequest) Reset() {
 	*x = GetDeviceTaskRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[72]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4577,7 +4758,7 @@ func (x *GetDeviceTaskRequest) String() string {
 func (*GetDeviceTaskRequest) ProtoMessage() {}
 
 func (x *GetDeviceTaskRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[72]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4590,7 +4771,7 @@ func (x *GetDeviceTaskRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceTaskRequest.ProtoReflect.Descriptor instead.
 func (*GetDeviceTaskRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{72}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *GetDeviceTaskRequest) GetTaskId() string {
@@ -4609,7 +4790,7 @@ type GetDeviceTaskResponse struct {
 
 func (x *GetDeviceTaskResponse) Reset() {
 	*x = GetDeviceTaskResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[73]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4621,7 +4802,7 @@ func (x *GetDeviceTaskResponse) String() string {
 func (*GetDeviceTaskResponse) ProtoMessage() {}
 
 func (x *GetDeviceTaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[73]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4634,7 +4815,7 @@ func (x *GetDeviceTaskResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceTaskResponse.ProtoReflect.Descriptor instead.
 func (*GetDeviceTaskResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{73}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{77}
 }
 
 func (x *GetDeviceTaskResponse) GetTask() *DeviceTask {
@@ -4658,7 +4839,7 @@ type MemberProfile struct {
 
 func (x *MemberProfile) Reset() {
 	*x = MemberProfile{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[74]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4670,7 +4851,7 @@ func (x *MemberProfile) String() string {
 func (*MemberProfile) ProtoMessage() {}
 
 func (x *MemberProfile) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[74]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4683,7 +4864,7 @@ func (x *MemberProfile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MemberProfile.ProtoReflect.Descriptor instead.
 func (*MemberProfile) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{74}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *MemberProfile) GetId() string {
@@ -4735,7 +4916,7 @@ type InstallationMember struct {
 
 func (x *InstallationMember) Reset() {
 	*x = InstallationMember{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[75]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4747,7 +4928,7 @@ func (x *InstallationMember) String() string {
 func (*InstallationMember) ProtoMessage() {}
 
 func (x *InstallationMember) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[75]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4760,7 +4941,7 @@ func (x *InstallationMember) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstallationMember.ProtoReflect.Descriptor instead.
 func (*InstallationMember) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{75}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{79}
 }
 
 func (x *InstallationMember) GetProfile() *MemberProfile {
@@ -4809,7 +4990,7 @@ type TenantAdmin struct {
 
 func (x *TenantAdmin) Reset() {
 	*x = TenantAdmin{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[76]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[80]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4821,7 +5002,7 @@ func (x *TenantAdmin) String() string {
 func (*TenantAdmin) ProtoMessage() {}
 
 func (x *TenantAdmin) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[76]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[80]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4834,7 +5015,7 @@ func (x *TenantAdmin) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TenantAdmin.ProtoReflect.Descriptor instead.
 func (*TenantAdmin) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{76}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *TenantAdmin) GetProfile() *MemberProfile {
@@ -4862,7 +5043,7 @@ type ListInstallationMembersRequest struct {
 
 func (x *ListInstallationMembersRequest) Reset() {
 	*x = ListInstallationMembersRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[77]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[81]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4874,7 +5055,7 @@ func (x *ListInstallationMembersRequest) String() string {
 func (*ListInstallationMembersRequest) ProtoMessage() {}
 
 func (x *ListInstallationMembersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[77]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[81]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4887,7 +5068,7 @@ func (x *ListInstallationMembersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListInstallationMembersRequest.ProtoReflect.Descriptor instead.
 func (*ListInstallationMembersRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{77}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *ListInstallationMembersRequest) GetInstallationId() string {
@@ -4908,7 +5089,7 @@ type ListInstallationMembersResponse struct {
 
 func (x *ListInstallationMembersResponse) Reset() {
 	*x = ListInstallationMembersResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[78]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[82]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4920,7 +5101,7 @@ func (x *ListInstallationMembersResponse) String() string {
 func (*ListInstallationMembersResponse) ProtoMessage() {}
 
 func (x *ListInstallationMembersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[78]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[82]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4933,7 +5114,7 @@ func (x *ListInstallationMembersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListInstallationMembersResponse.ProtoReflect.Descriptor instead.
 func (*ListInstallationMembersResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{78}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *ListInstallationMembersResponse) GetMembers() []*InstallationMember {
@@ -4972,7 +5153,7 @@ type PendingAccess struct {
 
 func (x *PendingAccess) Reset() {
 	*x = PendingAccess{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[79]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4984,7 +5165,7 @@ func (x *PendingAccess) String() string {
 func (*PendingAccess) ProtoMessage() {}
 
 func (x *PendingAccess) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[79]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4997,7 +5178,7 @@ func (x *PendingAccess) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PendingAccess.ProtoReflect.Descriptor instead.
 func (*PendingAccess) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{79}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *PendingAccess) GetId() string {
@@ -5063,7 +5244,7 @@ type AddInstallationMemberRequest struct {
 
 func (x *AddInstallationMemberRequest) Reset() {
 	*x = AddInstallationMemberRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[80]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[84]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5075,7 +5256,7 @@ func (x *AddInstallationMemberRequest) String() string {
 func (*AddInstallationMemberRequest) ProtoMessage() {}
 
 func (x *AddInstallationMemberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[80]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[84]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5088,7 +5269,7 @@ func (x *AddInstallationMemberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddInstallationMemberRequest.ProtoReflect.Descriptor instead.
 func (*AddInstallationMemberRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{80}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *AddInstallationMemberRequest) GetInstallationId() string {
@@ -5124,7 +5305,7 @@ type AddInstallationMemberResponse struct {
 
 func (x *AddInstallationMemberResponse) Reset() {
 	*x = AddInstallationMemberResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[81]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[85]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5136,7 +5317,7 @@ func (x *AddInstallationMemberResponse) String() string {
 func (*AddInstallationMemberResponse) ProtoMessage() {}
 
 func (x *AddInstallationMemberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[81]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[85]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5149,7 +5330,7 @@ func (x *AddInstallationMemberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddInstallationMemberResponse.ProtoReflect.Descriptor instead.
 func (*AddInstallationMemberResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{81}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *AddInstallationMemberResponse) GetMember() *InstallationMember {
@@ -5181,7 +5362,7 @@ type UpdateInstallationMemberRequest struct {
 
 func (x *UpdateInstallationMemberRequest) Reset() {
 	*x = UpdateInstallationMemberRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[82]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[86]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5193,7 +5374,7 @@ func (x *UpdateInstallationMemberRequest) String() string {
 func (*UpdateInstallationMemberRequest) ProtoMessage() {}
 
 func (x *UpdateInstallationMemberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[82]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[86]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5206,7 +5387,7 @@ func (x *UpdateInstallationMemberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateInstallationMemberRequest.ProtoReflect.Descriptor instead.
 func (*UpdateInstallationMemberRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{82}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *UpdateInstallationMemberRequest) GetInstallationId() string {
@@ -5253,7 +5434,7 @@ type UpdateInstallationMemberResponse struct {
 
 func (x *UpdateInstallationMemberResponse) Reset() {
 	*x = UpdateInstallationMemberResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[83]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[87]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5265,7 +5446,7 @@ func (x *UpdateInstallationMemberResponse) String() string {
 func (*UpdateInstallationMemberResponse) ProtoMessage() {}
 
 func (x *UpdateInstallationMemberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[83]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[87]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5278,7 +5459,7 @@ func (x *UpdateInstallationMemberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateInstallationMemberResponse.ProtoReflect.Descriptor instead.
 func (*UpdateInstallationMemberResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{83}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *UpdateInstallationMemberResponse) GetMember() *InstallationMember {
@@ -5299,7 +5480,7 @@ type RemoveInstallationMemberRequest struct {
 
 func (x *RemoveInstallationMemberRequest) Reset() {
 	*x = RemoveInstallationMemberRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[84]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[88]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5311,7 +5492,7 @@ func (x *RemoveInstallationMemberRequest) String() string {
 func (*RemoveInstallationMemberRequest) ProtoMessage() {}
 
 func (x *RemoveInstallationMemberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[84]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[88]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5324,7 +5505,7 @@ func (x *RemoveInstallationMemberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveInstallationMemberRequest.ProtoReflect.Descriptor instead.
 func (*RemoveInstallationMemberRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{84}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *RemoveInstallationMemberRequest) GetInstallationId() string {
@@ -5349,7 +5530,7 @@ type RemoveInstallationMemberResponse struct {
 
 func (x *RemoveInstallationMemberResponse) Reset() {
 	*x = RemoveInstallationMemberResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[85]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5361,7 +5542,7 @@ func (x *RemoveInstallationMemberResponse) String() string {
 func (*RemoveInstallationMemberResponse) ProtoMessage() {}
 
 func (x *RemoveInstallationMemberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[85]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5374,7 +5555,7 @@ func (x *RemoveInstallationMemberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveInstallationMemberResponse.ProtoReflect.Descriptor instead.
 func (*RemoveInstallationMemberResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{85}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{89}
 }
 
 // Tenant admins and above. Everyone else gets access through installation
@@ -5388,7 +5569,7 @@ type ListTenantAdminsRequest struct {
 
 func (x *ListTenantAdminsRequest) Reset() {
 	*x = ListTenantAdminsRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[86]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[90]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5400,7 +5581,7 @@ func (x *ListTenantAdminsRequest) String() string {
 func (*ListTenantAdminsRequest) ProtoMessage() {}
 
 func (x *ListTenantAdminsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[86]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[90]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5413,7 +5594,7 @@ func (x *ListTenantAdminsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTenantAdminsRequest.ProtoReflect.Descriptor instead.
 func (*ListTenantAdminsRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{86}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *ListTenantAdminsRequest) GetTenantId() string {
@@ -5434,7 +5615,7 @@ type ListTenantAdminsResponse struct {
 
 func (x *ListTenantAdminsResponse) Reset() {
 	*x = ListTenantAdminsResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[87]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5446,7 +5627,7 @@ func (x *ListTenantAdminsResponse) String() string {
 func (*ListTenantAdminsResponse) ProtoMessage() {}
 
 func (x *ListTenantAdminsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[87]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5459,7 +5640,7 @@ func (x *ListTenantAdminsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTenantAdminsResponse.ProtoReflect.Descriptor instead.
 func (*ListTenantAdminsResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{87}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *ListTenantAdminsResponse) GetAdmins() []*TenantAdmin {
@@ -5487,7 +5668,7 @@ type AddTenantAdminRequest struct {
 
 func (x *AddTenantAdminRequest) Reset() {
 	*x = AddTenantAdminRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[88]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5499,7 +5680,7 @@ func (x *AddTenantAdminRequest) String() string {
 func (*AddTenantAdminRequest) ProtoMessage() {}
 
 func (x *AddTenantAdminRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[88]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5512,7 +5693,7 @@ func (x *AddTenantAdminRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddTenantAdminRequest.ProtoReflect.Descriptor instead.
 func (*AddTenantAdminRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{88}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *AddTenantAdminRequest) GetTenantId() string {
@@ -5541,7 +5722,7 @@ type AddTenantAdminResponse struct {
 
 func (x *AddTenantAdminResponse) Reset() {
 	*x = AddTenantAdminResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[89]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[93]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5553,7 +5734,7 @@ func (x *AddTenantAdminResponse) String() string {
 func (*AddTenantAdminResponse) ProtoMessage() {}
 
 func (x *AddTenantAdminResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[89]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[93]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5566,7 +5747,7 @@ func (x *AddTenantAdminResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddTenantAdminResponse.ProtoReflect.Descriptor instead.
 func (*AddTenantAdminResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{89}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *AddTenantAdminResponse) GetAdmin() *TenantAdmin {
@@ -5595,7 +5776,7 @@ type CancelPendingAccessRequest struct {
 
 func (x *CancelPendingAccessRequest) Reset() {
 	*x = CancelPendingAccessRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[90]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[94]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5607,7 +5788,7 @@ func (x *CancelPendingAccessRequest) String() string {
 func (*CancelPendingAccessRequest) ProtoMessage() {}
 
 func (x *CancelPendingAccessRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[90]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[94]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5620,7 +5801,7 @@ func (x *CancelPendingAccessRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CancelPendingAccessRequest.ProtoReflect.Descriptor instead.
 func (*CancelPendingAccessRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{90}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *CancelPendingAccessRequest) GetPendingAccessId() string {
@@ -5638,7 +5819,7 @@ type CancelPendingAccessResponse struct {
 
 func (x *CancelPendingAccessResponse) Reset() {
 	*x = CancelPendingAccessResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[91]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[95]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5650,7 +5831,7 @@ func (x *CancelPendingAccessResponse) String() string {
 func (*CancelPendingAccessResponse) ProtoMessage() {}
 
 func (x *CancelPendingAccessResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[91]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[95]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5663,7 +5844,7 @@ func (x *CancelPendingAccessResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CancelPendingAccessResponse.ProtoReflect.Descriptor instead.
 func (*CancelPendingAccessResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{91}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{95}
 }
 
 // Sets pending installation access's role and, for users, exactly which
@@ -5682,7 +5863,7 @@ type UpdatePendingAccessRequest struct {
 
 func (x *UpdatePendingAccessRequest) Reset() {
 	*x = UpdatePendingAccessRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[92]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[96]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5694,7 +5875,7 @@ func (x *UpdatePendingAccessRequest) String() string {
 func (*UpdatePendingAccessRequest) ProtoMessage() {}
 
 func (x *UpdatePendingAccessRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[92]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[96]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5707,7 +5888,7 @@ func (x *UpdatePendingAccessRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePendingAccessRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePendingAccessRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{92}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *UpdatePendingAccessRequest) GetPendingAccessId() string {
@@ -5747,7 +5928,7 @@ type UpdatePendingAccessResponse struct {
 
 func (x *UpdatePendingAccessResponse) Reset() {
 	*x = UpdatePendingAccessResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[93]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[97]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5759,7 +5940,7 @@ func (x *UpdatePendingAccessResponse) String() string {
 func (*UpdatePendingAccessResponse) ProtoMessage() {}
 
 func (x *UpdatePendingAccessResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[93]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[97]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5772,7 +5953,7 @@ func (x *UpdatePendingAccessResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePendingAccessResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePendingAccessResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{93}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *UpdatePendingAccessResponse) GetPending() *PendingAccess {
@@ -5794,7 +5975,7 @@ type RemoveTenantAdminRequest struct {
 
 func (x *RemoveTenantAdminRequest) Reset() {
 	*x = RemoveTenantAdminRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[94]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[98]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5806,7 +5987,7 @@ func (x *RemoveTenantAdminRequest) String() string {
 func (*RemoveTenantAdminRequest) ProtoMessage() {}
 
 func (x *RemoveTenantAdminRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[94]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[98]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5819,7 +6000,7 @@ func (x *RemoveTenantAdminRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveTenantAdminRequest.ProtoReflect.Descriptor instead.
 func (*RemoveTenantAdminRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{94}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *RemoveTenantAdminRequest) GetTenantId() string {
@@ -5844,7 +6025,7 @@ type RemoveTenantAdminResponse struct {
 
 func (x *RemoveTenantAdminResponse) Reset() {
 	*x = RemoveTenantAdminResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[95]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5856,7 +6037,7 @@ func (x *RemoveTenantAdminResponse) String() string {
 func (*RemoveTenantAdminResponse) ProtoMessage() {}
 
 func (x *RemoveTenantAdminResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[95]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5869,7 +6050,7 @@ func (x *RemoveTenantAdminResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveTenantAdminResponse.ProtoReflect.Descriptor instead.
 func (*RemoveTenantAdminResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{95}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{99}
 }
 
 // A personal API key. It acts as the person who created it, with their
@@ -5891,7 +6072,7 @@ type ApiKey struct {
 
 func (x *ApiKey) Reset() {
 	*x = ApiKey{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[96]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[100]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5903,7 +6084,7 @@ func (x *ApiKey) String() string {
 func (*ApiKey) ProtoMessage() {}
 
 func (x *ApiKey) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[96]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[100]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5916,7 +6097,7 @@ func (x *ApiKey) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiKey.ProtoReflect.Descriptor instead.
 func (*ApiKey) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{96}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *ApiKey) GetId() string {
@@ -5972,7 +6153,7 @@ type CreateApiKeyRequest struct {
 
 func (x *CreateApiKeyRequest) Reset() {
 	*x = CreateApiKeyRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[97]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[101]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5984,7 +6165,7 @@ func (x *CreateApiKeyRequest) String() string {
 func (*CreateApiKeyRequest) ProtoMessage() {}
 
 func (x *CreateApiKeyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[97]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[101]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5997,7 +6178,7 @@ func (x *CreateApiKeyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateApiKeyRequest.ProtoReflect.Descriptor instead.
 func (*CreateApiKeyRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{97}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{101}
 }
 
 func (x *CreateApiKeyRequest) GetName() string {
@@ -6025,7 +6206,7 @@ type CreateApiKeyResponse struct {
 
 func (x *CreateApiKeyResponse) Reset() {
 	*x = CreateApiKeyResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[98]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[102]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6037,7 +6218,7 @@ func (x *CreateApiKeyResponse) String() string {
 func (*CreateApiKeyResponse) ProtoMessage() {}
 
 func (x *CreateApiKeyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[98]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[102]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6050,7 +6231,7 @@ func (x *CreateApiKeyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateApiKeyResponse.ProtoReflect.Descriptor instead.
 func (*CreateApiKeyResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{98}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *CreateApiKeyResponse) GetApiKey() *ApiKey {
@@ -6076,7 +6257,7 @@ type ListApiKeysRequest struct {
 
 func (x *ListApiKeysRequest) Reset() {
 	*x = ListApiKeysRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[99]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[103]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6088,7 +6269,7 @@ func (x *ListApiKeysRequest) String() string {
 func (*ListApiKeysRequest) ProtoMessage() {}
 
 func (x *ListApiKeysRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[99]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[103]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6101,7 +6282,7 @@ func (x *ListApiKeysRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListApiKeysRequest.ProtoReflect.Descriptor instead.
 func (*ListApiKeysRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{99}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{103}
 }
 
 type ListApiKeysResponse struct {
@@ -6113,7 +6294,7 @@ type ListApiKeysResponse struct {
 
 func (x *ListApiKeysResponse) Reset() {
 	*x = ListApiKeysResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[100]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[104]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6125,7 +6306,7 @@ func (x *ListApiKeysResponse) String() string {
 func (*ListApiKeysResponse) ProtoMessage() {}
 
 func (x *ListApiKeysResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[100]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[104]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6138,7 +6319,7 @@ func (x *ListApiKeysResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListApiKeysResponse.ProtoReflect.Descriptor instead.
 func (*ListApiKeysResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{100}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{104}
 }
 
 func (x *ListApiKeysResponse) GetApiKeys() []*ApiKey {
@@ -6158,7 +6339,7 @@ type DeleteApiKeyRequest struct {
 
 func (x *DeleteApiKeyRequest) Reset() {
 	*x = DeleteApiKeyRequest{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[101]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[105]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6170,7 +6351,7 @@ func (x *DeleteApiKeyRequest) String() string {
 func (*DeleteApiKeyRequest) ProtoMessage() {}
 
 func (x *DeleteApiKeyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[101]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[105]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6183,7 +6364,7 @@ func (x *DeleteApiKeyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteApiKeyRequest.ProtoReflect.Descriptor instead.
 func (*DeleteApiKeyRequest) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{101}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *DeleteApiKeyRequest) GetApiKeyId() string {
@@ -6201,7 +6382,7 @@ type DeleteApiKeyResponse struct {
 
 func (x *DeleteApiKeyResponse) Reset() {
 	*x = DeleteApiKeyResponse{}
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[102]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[106]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6213,7 +6394,7 @@ func (x *DeleteApiKeyResponse) String() string {
 func (*DeleteApiKeyResponse) ProtoMessage() {}
 
 func (x *DeleteApiKeyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_tempestvideo_v1_api_proto_msgTypes[102]
+	mi := &file_tempestvideo_v1_api_proto_msgTypes[106]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6226,7 +6407,7 @@ func (x *DeleteApiKeyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteApiKeyResponse.ProtoReflect.Descriptor instead.
 func (*DeleteApiKeyResponse) Descriptor() ([]byte, []int) {
-	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{102}
+	return file_tempestvideo_v1_api_proto_rawDescGZIP(), []int{106}
 }
 
 var file_tempestvideo_v1_api_proto_extTypes = []protoimpl.ExtensionInfo{
@@ -6381,7 +6562,16 @@ const file_tempestvideo_v1_api_proto_rawDesc = "" +
 	"\n" +
 	"_last_name\"K\n" +
 	"\x15UpsertProfileResponse\x122\n" +
-	"\aprofile\x18\x01 \x01(\v2\x18.tempestvideo.v1.ProfileR\aprofile\"p\n" +
+	"\aprofile\x18\x01 \x01(\v2\x18.tempestvideo.v1.ProfileR\aprofile\"R\n" +
+	"\x14UpdateProfileRequest\x12\x1d\n" +
+	"\n" +
+	"first_name\x18\x01 \x01(\tR\tfirstName\x12\x1b\n" +
+	"\tlast_name\x18\x02 \x01(\tR\blastName\"K\n" +
+	"\x15UpdateProfileResponse\x122\n" +
+	"\aprofile\x18\x01 \x01(\v2\x18.tempestvideo.v1.ProfileR\aprofile\"0\n" +
+	"\x12SetPasswordRequest\x12\x1a\n" +
+	"\bpassword\x18\x01 \x01(\tR\bpassword\"\x15\n" +
+	"\x13SetPasswordResponse\"p\n" +
 	"\fTenantAccess\x12/\n" +
 	"\x06tenant\x18\x01 \x01(\v2\x17.tempestvideo.v1.TenantR\x06tenant\x12/\n" +
 	"\x04role\x18\x02 \x01(\x0e2\x1b.tempestvideo.v1.PermissionR\x04role\"\x88\x01\n" +
@@ -6759,9 +6949,11 @@ const file_tempestvideo_v1_api_proto_rawDesc = "" +
 	"\x10InstallationRole\x12!\n" +
 	"\x1dINSTALLATION_ROLE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17INSTALLATION_ROLE_ADMIN\x10\x01\x12\x1a\n" +
-	"\x16INSTALLATION_ROLE_USER\x10\x022p\n" +
+	"\x16INSTALLATION_ROLE_USER\x10\x022\xaa\x02\n" +
 	"\x0eProfileService\x12^\n" +
-	"\rUpsertProfile\x12%.tempestvideo.v1.UpsertProfileRequest\x1a&.tempestvideo.v1.UpsertProfileResponse2\xc7\x01\n" +
+	"\rUpsertProfile\x12%.tempestvideo.v1.UpsertProfileRequest\x1a&.tempestvideo.v1.UpsertProfileResponse\x12^\n" +
+	"\rUpdateProfile\x12%.tempestvideo.v1.UpdateProfileRequest\x1a&.tempestvideo.v1.UpdateProfileResponse\x12X\n" +
+	"\vSetPassword\x12#.tempestvideo.v1.SetPasswordRequest\x1a$.tempestvideo.v1.SetPasswordResponse2\xc7\x01\n" +
 	"\x0eTenantsService\x12X\n" +
 	"\vListTenants\x12#.tempestvideo.v1.ListTenantsRequest\x1a$.tempestvideo.v1.ListTenantsResponse\x12[\n" +
 	"\fUpdateTenant\x12$.tempestvideo.v1.UpdateTenantRequest\x1a%.tempestvideo.v1.UpdateTenantResponse2\xb5\x04\n" +
@@ -6827,7 +7019,7 @@ func file_tempestvideo_v1_api_proto_rawDescGZIP() []byte {
 }
 
 var file_tempestvideo_v1_api_proto_enumTypes = make([]protoimpl.EnumInfo, 9)
-var file_tempestvideo_v1_api_proto_msgTypes = make([]protoimpl.MessageInfo, 103)
+var file_tempestvideo_v1_api_proto_msgTypes = make([]protoimpl.MessageInfo, 107)
 var file_tempestvideo_v1_api_proto_goTypes = []any{
 	(Permission)(0),                             // 0: tempestvideo.v1.Permission
 	(SourceType)(0),                             // 1: tempestvideo.v1.SourceType
@@ -6852,256 +7044,265 @@ var file_tempestvideo_v1_api_proto_goTypes = []any{
 	(*UpsertProfileRequest)(nil),                // 20: tempestvideo.v1.UpsertProfileRequest
 	(*Profile)(nil),                             // 21: tempestvideo.v1.Profile
 	(*UpsertProfileResponse)(nil),               // 22: tempestvideo.v1.UpsertProfileResponse
-	(*TenantAccess)(nil),                        // 23: tempestvideo.v1.TenantAccess
-	(*InstallationAccess)(nil),                  // 24: tempestvideo.v1.InstallationAccess
-	(*ListTenantsRequest)(nil),                  // 25: tempestvideo.v1.ListTenantsRequest
-	(*ListTenantsResponse)(nil),                 // 26: tempestvideo.v1.ListTenantsResponse
-	(*UpdateTenantRequest)(nil),                 // 27: tempestvideo.v1.UpdateTenantRequest
-	(*UpdateTenantResponse)(nil),                // 28: tempestvideo.v1.UpdateTenantResponse
-	(*ListInstallationsRequest)(nil),            // 29: tempestvideo.v1.ListInstallationsRequest
-	(*ListInstallationsResponse)(nil),           // 30: tempestvideo.v1.ListInstallationsResponse
-	(*GetInstallationRequest)(nil),              // 31: tempestvideo.v1.GetInstallationRequest
-	(*GetInstallationResponse)(nil),             // 32: tempestvideo.v1.GetInstallationResponse
-	(*UpdateInstallationRequest)(nil),           // 33: tempestvideo.v1.UpdateInstallationRequest
-	(*UpdateInstallationResponse)(nil),          // 34: tempestvideo.v1.UpdateInstallationResponse
-	(*DeleteInstallationRequest)(nil),           // 35: tempestvideo.v1.DeleteInstallationRequest
-	(*DeleteInstallationResponse)(nil),          // 36: tempestvideo.v1.DeleteInstallationResponse
-	(*RenameConnectorRequest)(nil),              // 37: tempestvideo.v1.RenameConnectorRequest
-	(*RenameConnectorResponse)(nil),             // 38: tempestvideo.v1.RenameConnectorResponse
-	(*DeleteConnectorRequest)(nil),              // 39: tempestvideo.v1.DeleteConnectorRequest
-	(*DeleteConnectorResponse)(nil),             // 40: tempestvideo.v1.DeleteConnectorResponse
-	(*ListConnectorsRequest)(nil),               // 41: tempestvideo.v1.ListConnectorsRequest
-	(*ListConnectorsResponse)(nil),              // 42: tempestvideo.v1.ListConnectorsResponse
-	(*ChannelSource)(nil),                       // 43: tempestvideo.v1.ChannelSource
-	(*Channel)(nil),                             // 44: tempestvideo.v1.Channel
-	(*ChannelAvailability)(nil),                 // 45: tempestvideo.v1.ChannelAvailability
-	(*NoAuth)(nil),                              // 46: tempestvideo.v1.NoAuth
-	(*UsernamePasswordAuth)(nil),                // 47: tempestvideo.v1.UsernamePasswordAuth
-	(*ApiKeyAuth)(nil),                          // 48: tempestvideo.v1.ApiKeyAuth
-	(*DeviceCredentials)(nil),                   // 49: tempestvideo.v1.DeviceCredentials
-	(*Device)(nil),                              // 50: tempestvideo.v1.Device
-	(*ListChannelsRequest)(nil),                 // 51: tempestvideo.v1.ListChannelsRequest
-	(*ListChannelsResponse)(nil),                // 52: tempestvideo.v1.ListChannelsResponse
-	(*CreateChannelRequest)(nil),                // 53: tempestvideo.v1.CreateChannelRequest
-	(*CreateChannelResponse)(nil),               // 54: tempestvideo.v1.CreateChannelResponse
-	(*UpdateChannelRequest)(nil),                // 55: tempestvideo.v1.UpdateChannelRequest
-	(*UpdateChannelResponse)(nil),               // 56: tempestvideo.v1.UpdateChannelResponse
-	(*DeleteChannelRequest)(nil),                // 57: tempestvideo.v1.DeleteChannelRequest
-	(*DeleteChannelResponse)(nil),               // 58: tempestvideo.v1.DeleteChannelResponse
-	(*SetChannelIconRequest)(nil),               // 59: tempestvideo.v1.SetChannelIconRequest
-	(*SetChannelIconResponse)(nil),              // 60: tempestvideo.v1.SetChannelIconResponse
-	(*DeleteChannelIconRequest)(nil),            // 61: tempestvideo.v1.DeleteChannelIconRequest
-	(*DeleteChannelIconResponse)(nil),           // 62: tempestvideo.v1.DeleteChannelIconResponse
-	(*ListDevicesRequest)(nil),                  // 63: tempestvideo.v1.ListDevicesRequest
-	(*ListDevicesResponse)(nil),                 // 64: tempestvideo.v1.ListDevicesResponse
-	(*CreateDeviceRequest)(nil),                 // 65: tempestvideo.v1.CreateDeviceRequest
-	(*CreateDeviceResponse)(nil),                // 66: tempestvideo.v1.CreateDeviceResponse
-	(*UpdateDeviceRequest)(nil),                 // 67: tempestvideo.v1.UpdateDeviceRequest
-	(*UpdateDeviceResponse)(nil),                // 68: tempestvideo.v1.UpdateDeviceResponse
-	(*DeleteDeviceRequest)(nil),                 // 69: tempestvideo.v1.DeleteDeviceRequest
-	(*DeleteDeviceResponse)(nil),                // 70: tempestvideo.v1.DeleteDeviceResponse
-	(*SetDeviceChannelRequest)(nil),             // 71: tempestvideo.v1.SetDeviceChannelRequest
-	(*ChannelRequest)(nil),                      // 72: tempestvideo.v1.ChannelRequest
-	(*SetDeviceChannelResponse)(nil),            // 73: tempestvideo.v1.SetDeviceChannelResponse
-	(*GetChannelRequestRequest)(nil),            // 74: tempestvideo.v1.GetChannelRequestRequest
-	(*GetChannelRequestResponse)(nil),           // 75: tempestvideo.v1.GetChannelRequestResponse
-	(*ZeeveeGuideFilter)(nil),                   // 76: tempestvideo.v1.ZeeveeGuideFilter
-	(*ChannelNumbers)(nil),                      // 77: tempestvideo.v1.ChannelNumbers
-	(*ProvisionDeviceRequest)(nil),              // 78: tempestvideo.v1.ProvisionDeviceRequest
-	(*ProvisionDeviceResponse)(nil),             // 79: tempestvideo.v1.ProvisionDeviceResponse
-	(*DeviceTask)(nil),                          // 80: tempestvideo.v1.DeviceTask
-	(*GetDeviceTaskRequest)(nil),                // 81: tempestvideo.v1.GetDeviceTaskRequest
-	(*GetDeviceTaskResponse)(nil),               // 82: tempestvideo.v1.GetDeviceTaskResponse
-	(*MemberProfile)(nil),                       // 83: tempestvideo.v1.MemberProfile
-	(*InstallationMember)(nil),                  // 84: tempestvideo.v1.InstallationMember
-	(*TenantAdmin)(nil),                         // 85: tempestvideo.v1.TenantAdmin
-	(*ListInstallationMembersRequest)(nil),      // 86: tempestvideo.v1.ListInstallationMembersRequest
-	(*ListInstallationMembersResponse)(nil),     // 87: tempestvideo.v1.ListInstallationMembersResponse
-	(*PendingAccess)(nil),                       // 88: tempestvideo.v1.PendingAccess
-	(*AddInstallationMemberRequest)(nil),        // 89: tempestvideo.v1.AddInstallationMemberRequest
-	(*AddInstallationMemberResponse)(nil),       // 90: tempestvideo.v1.AddInstallationMemberResponse
-	(*UpdateInstallationMemberRequest)(nil),     // 91: tempestvideo.v1.UpdateInstallationMemberRequest
-	(*UpdateInstallationMemberResponse)(nil),    // 92: tempestvideo.v1.UpdateInstallationMemberResponse
-	(*RemoveInstallationMemberRequest)(nil),     // 93: tempestvideo.v1.RemoveInstallationMemberRequest
-	(*RemoveInstallationMemberResponse)(nil),    // 94: tempestvideo.v1.RemoveInstallationMemberResponse
-	(*ListTenantAdminsRequest)(nil),             // 95: tempestvideo.v1.ListTenantAdminsRequest
-	(*ListTenantAdminsResponse)(nil),            // 96: tempestvideo.v1.ListTenantAdminsResponse
-	(*AddTenantAdminRequest)(nil),               // 97: tempestvideo.v1.AddTenantAdminRequest
-	(*AddTenantAdminResponse)(nil),              // 98: tempestvideo.v1.AddTenantAdminResponse
-	(*CancelPendingAccessRequest)(nil),          // 99: tempestvideo.v1.CancelPendingAccessRequest
-	(*CancelPendingAccessResponse)(nil),         // 100: tempestvideo.v1.CancelPendingAccessResponse
-	(*UpdatePendingAccessRequest)(nil),          // 101: tempestvideo.v1.UpdatePendingAccessRequest
-	(*UpdatePendingAccessResponse)(nil),         // 102: tempestvideo.v1.UpdatePendingAccessResponse
-	(*RemoveTenantAdminRequest)(nil),            // 103: tempestvideo.v1.RemoveTenantAdminRequest
-	(*RemoveTenantAdminResponse)(nil),           // 104: tempestvideo.v1.RemoveTenantAdminResponse
-	(*ApiKey)(nil),                              // 105: tempestvideo.v1.ApiKey
-	(*CreateApiKeyRequest)(nil),                 // 106: tempestvideo.v1.CreateApiKeyRequest
-	(*CreateApiKeyResponse)(nil),                // 107: tempestvideo.v1.CreateApiKeyResponse
-	(*ListApiKeysRequest)(nil),                  // 108: tempestvideo.v1.ListApiKeysRequest
-	(*ListApiKeysResponse)(nil),                 // 109: tempestvideo.v1.ListApiKeysResponse
-	(*DeleteApiKeyRequest)(nil),                 // 110: tempestvideo.v1.DeleteApiKeyRequest
-	(*DeleteApiKeyResponse)(nil),                // 111: tempestvideo.v1.DeleteApiKeyResponse
-	(*descriptorpb.EnumValueOptions)(nil),       // 112: google.protobuf.EnumValueOptions
+	(*UpdateProfileRequest)(nil),                // 23: tempestvideo.v1.UpdateProfileRequest
+	(*UpdateProfileResponse)(nil),               // 24: tempestvideo.v1.UpdateProfileResponse
+	(*SetPasswordRequest)(nil),                  // 25: tempestvideo.v1.SetPasswordRequest
+	(*SetPasswordResponse)(nil),                 // 26: tempestvideo.v1.SetPasswordResponse
+	(*TenantAccess)(nil),                        // 27: tempestvideo.v1.TenantAccess
+	(*InstallationAccess)(nil),                  // 28: tempestvideo.v1.InstallationAccess
+	(*ListTenantsRequest)(nil),                  // 29: tempestvideo.v1.ListTenantsRequest
+	(*ListTenantsResponse)(nil),                 // 30: tempestvideo.v1.ListTenantsResponse
+	(*UpdateTenantRequest)(nil),                 // 31: tempestvideo.v1.UpdateTenantRequest
+	(*UpdateTenantResponse)(nil),                // 32: tempestvideo.v1.UpdateTenantResponse
+	(*ListInstallationsRequest)(nil),            // 33: tempestvideo.v1.ListInstallationsRequest
+	(*ListInstallationsResponse)(nil),           // 34: tempestvideo.v1.ListInstallationsResponse
+	(*GetInstallationRequest)(nil),              // 35: tempestvideo.v1.GetInstallationRequest
+	(*GetInstallationResponse)(nil),             // 36: tempestvideo.v1.GetInstallationResponse
+	(*UpdateInstallationRequest)(nil),           // 37: tempestvideo.v1.UpdateInstallationRequest
+	(*UpdateInstallationResponse)(nil),          // 38: tempestvideo.v1.UpdateInstallationResponse
+	(*DeleteInstallationRequest)(nil),           // 39: tempestvideo.v1.DeleteInstallationRequest
+	(*DeleteInstallationResponse)(nil),          // 40: tempestvideo.v1.DeleteInstallationResponse
+	(*RenameConnectorRequest)(nil),              // 41: tempestvideo.v1.RenameConnectorRequest
+	(*RenameConnectorResponse)(nil),             // 42: tempestvideo.v1.RenameConnectorResponse
+	(*DeleteConnectorRequest)(nil),              // 43: tempestvideo.v1.DeleteConnectorRequest
+	(*DeleteConnectorResponse)(nil),             // 44: tempestvideo.v1.DeleteConnectorResponse
+	(*ListConnectorsRequest)(nil),               // 45: tempestvideo.v1.ListConnectorsRequest
+	(*ListConnectorsResponse)(nil),              // 46: tempestvideo.v1.ListConnectorsResponse
+	(*ChannelSource)(nil),                       // 47: tempestvideo.v1.ChannelSource
+	(*Channel)(nil),                             // 48: tempestvideo.v1.Channel
+	(*ChannelAvailability)(nil),                 // 49: tempestvideo.v1.ChannelAvailability
+	(*NoAuth)(nil),                              // 50: tempestvideo.v1.NoAuth
+	(*UsernamePasswordAuth)(nil),                // 51: tempestvideo.v1.UsernamePasswordAuth
+	(*ApiKeyAuth)(nil),                          // 52: tempestvideo.v1.ApiKeyAuth
+	(*DeviceCredentials)(nil),                   // 53: tempestvideo.v1.DeviceCredentials
+	(*Device)(nil),                              // 54: tempestvideo.v1.Device
+	(*ListChannelsRequest)(nil),                 // 55: tempestvideo.v1.ListChannelsRequest
+	(*ListChannelsResponse)(nil),                // 56: tempestvideo.v1.ListChannelsResponse
+	(*CreateChannelRequest)(nil),                // 57: tempestvideo.v1.CreateChannelRequest
+	(*CreateChannelResponse)(nil),               // 58: tempestvideo.v1.CreateChannelResponse
+	(*UpdateChannelRequest)(nil),                // 59: tempestvideo.v1.UpdateChannelRequest
+	(*UpdateChannelResponse)(nil),               // 60: tempestvideo.v1.UpdateChannelResponse
+	(*DeleteChannelRequest)(nil),                // 61: tempestvideo.v1.DeleteChannelRequest
+	(*DeleteChannelResponse)(nil),               // 62: tempestvideo.v1.DeleteChannelResponse
+	(*SetChannelIconRequest)(nil),               // 63: tempestvideo.v1.SetChannelIconRequest
+	(*SetChannelIconResponse)(nil),              // 64: tempestvideo.v1.SetChannelIconResponse
+	(*DeleteChannelIconRequest)(nil),            // 65: tempestvideo.v1.DeleteChannelIconRequest
+	(*DeleteChannelIconResponse)(nil),           // 66: tempestvideo.v1.DeleteChannelIconResponse
+	(*ListDevicesRequest)(nil),                  // 67: tempestvideo.v1.ListDevicesRequest
+	(*ListDevicesResponse)(nil),                 // 68: tempestvideo.v1.ListDevicesResponse
+	(*CreateDeviceRequest)(nil),                 // 69: tempestvideo.v1.CreateDeviceRequest
+	(*CreateDeviceResponse)(nil),                // 70: tempestvideo.v1.CreateDeviceResponse
+	(*UpdateDeviceRequest)(nil),                 // 71: tempestvideo.v1.UpdateDeviceRequest
+	(*UpdateDeviceResponse)(nil),                // 72: tempestvideo.v1.UpdateDeviceResponse
+	(*DeleteDeviceRequest)(nil),                 // 73: tempestvideo.v1.DeleteDeviceRequest
+	(*DeleteDeviceResponse)(nil),                // 74: tempestvideo.v1.DeleteDeviceResponse
+	(*SetDeviceChannelRequest)(nil),             // 75: tempestvideo.v1.SetDeviceChannelRequest
+	(*ChannelRequest)(nil),                      // 76: tempestvideo.v1.ChannelRequest
+	(*SetDeviceChannelResponse)(nil),            // 77: tempestvideo.v1.SetDeviceChannelResponse
+	(*GetChannelRequestRequest)(nil),            // 78: tempestvideo.v1.GetChannelRequestRequest
+	(*GetChannelRequestResponse)(nil),           // 79: tempestvideo.v1.GetChannelRequestResponse
+	(*ZeeveeGuideFilter)(nil),                   // 80: tempestvideo.v1.ZeeveeGuideFilter
+	(*ChannelNumbers)(nil),                      // 81: tempestvideo.v1.ChannelNumbers
+	(*ProvisionDeviceRequest)(nil),              // 82: tempestvideo.v1.ProvisionDeviceRequest
+	(*ProvisionDeviceResponse)(nil),             // 83: tempestvideo.v1.ProvisionDeviceResponse
+	(*DeviceTask)(nil),                          // 84: tempestvideo.v1.DeviceTask
+	(*GetDeviceTaskRequest)(nil),                // 85: tempestvideo.v1.GetDeviceTaskRequest
+	(*GetDeviceTaskResponse)(nil),               // 86: tempestvideo.v1.GetDeviceTaskResponse
+	(*MemberProfile)(nil),                       // 87: tempestvideo.v1.MemberProfile
+	(*InstallationMember)(nil),                  // 88: tempestvideo.v1.InstallationMember
+	(*TenantAdmin)(nil),                         // 89: tempestvideo.v1.TenantAdmin
+	(*ListInstallationMembersRequest)(nil),      // 90: tempestvideo.v1.ListInstallationMembersRequest
+	(*ListInstallationMembersResponse)(nil),     // 91: tempestvideo.v1.ListInstallationMembersResponse
+	(*PendingAccess)(nil),                       // 92: tempestvideo.v1.PendingAccess
+	(*AddInstallationMemberRequest)(nil),        // 93: tempestvideo.v1.AddInstallationMemberRequest
+	(*AddInstallationMemberResponse)(nil),       // 94: tempestvideo.v1.AddInstallationMemberResponse
+	(*UpdateInstallationMemberRequest)(nil),     // 95: tempestvideo.v1.UpdateInstallationMemberRequest
+	(*UpdateInstallationMemberResponse)(nil),    // 96: tempestvideo.v1.UpdateInstallationMemberResponse
+	(*RemoveInstallationMemberRequest)(nil),     // 97: tempestvideo.v1.RemoveInstallationMemberRequest
+	(*RemoveInstallationMemberResponse)(nil),    // 98: tempestvideo.v1.RemoveInstallationMemberResponse
+	(*ListTenantAdminsRequest)(nil),             // 99: tempestvideo.v1.ListTenantAdminsRequest
+	(*ListTenantAdminsResponse)(nil),            // 100: tempestvideo.v1.ListTenantAdminsResponse
+	(*AddTenantAdminRequest)(nil),               // 101: tempestvideo.v1.AddTenantAdminRequest
+	(*AddTenantAdminResponse)(nil),              // 102: tempestvideo.v1.AddTenantAdminResponse
+	(*CancelPendingAccessRequest)(nil),          // 103: tempestvideo.v1.CancelPendingAccessRequest
+	(*CancelPendingAccessResponse)(nil),         // 104: tempestvideo.v1.CancelPendingAccessResponse
+	(*UpdatePendingAccessRequest)(nil),          // 105: tempestvideo.v1.UpdatePendingAccessRequest
+	(*UpdatePendingAccessResponse)(nil),         // 106: tempestvideo.v1.UpdatePendingAccessResponse
+	(*RemoveTenantAdminRequest)(nil),            // 107: tempestvideo.v1.RemoveTenantAdminRequest
+	(*RemoveTenantAdminResponse)(nil),           // 108: tempestvideo.v1.RemoveTenantAdminResponse
+	(*ApiKey)(nil),                              // 109: tempestvideo.v1.ApiKey
+	(*CreateApiKeyRequest)(nil),                 // 110: tempestvideo.v1.CreateApiKeyRequest
+	(*CreateApiKeyResponse)(nil),                // 111: tempestvideo.v1.CreateApiKeyResponse
+	(*ListApiKeysRequest)(nil),                  // 112: tempestvideo.v1.ListApiKeysRequest
+	(*ListApiKeysResponse)(nil),                 // 113: tempestvideo.v1.ListApiKeysResponse
+	(*DeleteApiKeyRequest)(nil),                 // 114: tempestvideo.v1.DeleteApiKeyRequest
+	(*DeleteApiKeyResponse)(nil),                // 115: tempestvideo.v1.DeleteApiKeyResponse
+	(*descriptorpb.EnumValueOptions)(nil),       // 116: google.protobuf.EnumValueOptions
 }
 var file_tempestvideo_v1_api_proto_depIdxs = []int32{
 	21,  // 0: tempestvideo.v1.UpsertProfileResponse.profile:type_name -> tempestvideo.v1.Profile
-	9,   // 1: tempestvideo.v1.TenantAccess.tenant:type_name -> tempestvideo.v1.Tenant
-	0,   // 2: tempestvideo.v1.TenantAccess.role:type_name -> tempestvideo.v1.Permission
-	10,  // 3: tempestvideo.v1.InstallationAccess.installation:type_name -> tempestvideo.v1.Installation
-	0,   // 4: tempestvideo.v1.InstallationAccess.role:type_name -> tempestvideo.v1.Permission
-	23,  // 5: tempestvideo.v1.ListTenantsResponse.tenants:type_name -> tempestvideo.v1.TenantAccess
-	9,   // 6: tempestvideo.v1.UpdateTenantResponse.tenant:type_name -> tempestvideo.v1.Tenant
-	24,  // 7: tempestvideo.v1.ListInstallationsResponse.installations:type_name -> tempestvideo.v1.InstallationAccess
-	24,  // 8: tempestvideo.v1.GetInstallationResponse.installation:type_name -> tempestvideo.v1.InstallationAccess
-	9,   // 9: tempestvideo.v1.GetInstallationResponse.tenant:type_name -> tempestvideo.v1.Tenant
-	10,  // 10: tempestvideo.v1.UpdateInstallationResponse.installation:type_name -> tempestvideo.v1.Installation
-	11,  // 11: tempestvideo.v1.ListConnectorsResponse.connectors:type_name -> tempestvideo.v1.Connector
-	1,   // 12: tempestvideo.v1.ChannelSource.type:type_name -> tempestvideo.v1.SourceType
-	43,  // 13: tempestvideo.v1.Channel.sources:type_name -> tempestvideo.v1.ChannelSource
-	45,  // 14: tempestvideo.v1.Channel.availability:type_name -> tempestvideo.v1.ChannelAvailability
-	1,   // 15: tempestvideo.v1.ChannelAvailability.source_type:type_name -> tempestvideo.v1.SourceType
-	46,  // 16: tempestvideo.v1.DeviceCredentials.none:type_name -> tempestvideo.v1.NoAuth
-	47,  // 17: tempestvideo.v1.DeviceCredentials.username_password:type_name -> tempestvideo.v1.UsernamePasswordAuth
-	48,  // 18: tempestvideo.v1.DeviceCredentials.api_key:type_name -> tempestvideo.v1.ApiKeyAuth
-	2,   // 19: tempestvideo.v1.Device.type:type_name -> tempestvideo.v1.DeviceType
-	4,   // 20: tempestvideo.v1.Device.model:type_name -> tempestvideo.v1.DeviceModel
-	3,   // 21: tempestvideo.v1.Device.auth_method:type_name -> tempestvideo.v1.DeviceAuthMethod
-	5,   // 22: tempestvideo.v1.Device.status:type_name -> tempestvideo.v1.DeviceStatus
-	44,  // 23: tempestvideo.v1.ListChannelsResponse.channels:type_name -> tempestvideo.v1.Channel
-	43,  // 24: tempestvideo.v1.CreateChannelRequest.sources:type_name -> tempestvideo.v1.ChannelSource
-	44,  // 25: tempestvideo.v1.CreateChannelResponse.channel:type_name -> tempestvideo.v1.Channel
-	43,  // 26: tempestvideo.v1.UpdateChannelRequest.sources:type_name -> tempestvideo.v1.ChannelSource
-	44,  // 27: tempestvideo.v1.UpdateChannelResponse.channel:type_name -> tempestvideo.v1.Channel
-	44,  // 28: tempestvideo.v1.SetChannelIconResponse.channel:type_name -> tempestvideo.v1.Channel
-	44,  // 29: tempestvideo.v1.DeleteChannelIconResponse.channel:type_name -> tempestvideo.v1.Channel
-	50,  // 30: tempestvideo.v1.ListDevicesResponse.devices:type_name -> tempestvideo.v1.Device
-	4,   // 31: tempestvideo.v1.CreateDeviceRequest.model:type_name -> tempestvideo.v1.DeviceModel
-	49,  // 32: tempestvideo.v1.CreateDeviceRequest.credentials:type_name -> tempestvideo.v1.DeviceCredentials
-	50,  // 33: tempestvideo.v1.CreateDeviceResponse.device:type_name -> tempestvideo.v1.Device
-	4,   // 34: tempestvideo.v1.UpdateDeviceRequest.model:type_name -> tempestvideo.v1.DeviceModel
-	49,  // 35: tempestvideo.v1.UpdateDeviceRequest.credentials:type_name -> tempestvideo.v1.DeviceCredentials
-	50,  // 36: tempestvideo.v1.UpdateDeviceResponse.device:type_name -> tempestvideo.v1.Device
-	6,   // 37: tempestvideo.v1.ChannelRequest.status:type_name -> tempestvideo.v1.ChannelRequestStatus
-	50,  // 38: tempestvideo.v1.SetDeviceChannelResponse.device:type_name -> tempestvideo.v1.Device
-	72,  // 39: tempestvideo.v1.SetDeviceChannelResponse.request:type_name -> tempestvideo.v1.ChannelRequest
-	72,  // 40: tempestvideo.v1.GetChannelRequestResponse.request:type_name -> tempestvideo.v1.ChannelRequest
-	50,  // 41: tempestvideo.v1.GetChannelRequestResponse.device:type_name -> tempestvideo.v1.Device
-	77,  // 42: tempestvideo.v1.ZeeveeGuideFilter.include:type_name -> tempestvideo.v1.ChannelNumbers
-	76,  // 43: tempestvideo.v1.ProvisionDeviceRequest.zeevee_guide:type_name -> tempestvideo.v1.ZeeveeGuideFilter
-	80,  // 44: tempestvideo.v1.ProvisionDeviceResponse.task:type_name -> tempestvideo.v1.DeviceTask
-	7,   // 45: tempestvideo.v1.DeviceTask.status:type_name -> tempestvideo.v1.DeviceTaskStatus
-	80,  // 46: tempestvideo.v1.GetDeviceTaskResponse.task:type_name -> tempestvideo.v1.DeviceTask
-	83,  // 47: tempestvideo.v1.InstallationMember.profile:type_name -> tempestvideo.v1.MemberProfile
-	8,   // 48: tempestvideo.v1.InstallationMember.role:type_name -> tempestvideo.v1.InstallationRole
-	83,  // 49: tempestvideo.v1.TenantAdmin.profile:type_name -> tempestvideo.v1.MemberProfile
-	84,  // 50: tempestvideo.v1.ListInstallationMembersResponse.members:type_name -> tempestvideo.v1.InstallationMember
-	88,  // 51: tempestvideo.v1.ListInstallationMembersResponse.pending:type_name -> tempestvideo.v1.PendingAccess
-	8,   // 52: tempestvideo.v1.PendingAccess.role:type_name -> tempestvideo.v1.InstallationRole
-	8,   // 53: tempestvideo.v1.AddInstallationMemberRequest.role:type_name -> tempestvideo.v1.InstallationRole
-	84,  // 54: tempestvideo.v1.AddInstallationMemberResponse.member:type_name -> tempestvideo.v1.InstallationMember
-	88,  // 55: tempestvideo.v1.AddInstallationMemberResponse.pending:type_name -> tempestvideo.v1.PendingAccess
-	8,   // 56: tempestvideo.v1.UpdateInstallationMemberRequest.role:type_name -> tempestvideo.v1.InstallationRole
-	84,  // 57: tempestvideo.v1.UpdateInstallationMemberResponse.member:type_name -> tempestvideo.v1.InstallationMember
-	85,  // 58: tempestvideo.v1.ListTenantAdminsResponse.admins:type_name -> tempestvideo.v1.TenantAdmin
-	88,  // 59: tempestvideo.v1.ListTenantAdminsResponse.pending:type_name -> tempestvideo.v1.PendingAccess
-	85,  // 60: tempestvideo.v1.AddTenantAdminResponse.admin:type_name -> tempestvideo.v1.TenantAdmin
-	88,  // 61: tempestvideo.v1.AddTenantAdminResponse.pending:type_name -> tempestvideo.v1.PendingAccess
-	8,   // 62: tempestvideo.v1.UpdatePendingAccessRequest.role:type_name -> tempestvideo.v1.InstallationRole
-	88,  // 63: tempestvideo.v1.UpdatePendingAccessResponse.pending:type_name -> tempestvideo.v1.PendingAccess
-	105, // 64: tempestvideo.v1.CreateApiKeyResponse.api_key:type_name -> tempestvideo.v1.ApiKey
-	105, // 65: tempestvideo.v1.ListApiKeysResponse.api_keys:type_name -> tempestvideo.v1.ApiKey
-	112, // 66: tempestvideo.v1.device_type:extendee -> google.protobuf.EnumValueOptions
-	112, // 67: tempestvideo.v1.auth_methods:extendee -> google.protobuf.EnumValueOptions
-	112, // 68: tempestvideo.v1.source_types:extendee -> google.protobuf.EnumValueOptions
-	112, // 69: tempestvideo.v1.provisionable:extendee -> google.protobuf.EnumValueOptions
-	2,   // 70: tempestvideo.v1.device_type:type_name -> tempestvideo.v1.DeviceType
-	3,   // 71: tempestvideo.v1.auth_methods:type_name -> tempestvideo.v1.DeviceAuthMethod
-	1,   // 72: tempestvideo.v1.source_types:type_name -> tempestvideo.v1.SourceType
-	20,  // 73: tempestvideo.v1.ProfileService.UpsertProfile:input_type -> tempestvideo.v1.UpsertProfileRequest
-	25,  // 74: tempestvideo.v1.TenantsService.ListTenants:input_type -> tempestvideo.v1.ListTenantsRequest
-	27,  // 75: tempestvideo.v1.TenantsService.UpdateTenant:input_type -> tempestvideo.v1.UpdateTenantRequest
-	29,  // 76: tempestvideo.v1.InstallationsService.ListInstallations:input_type -> tempestvideo.v1.ListInstallationsRequest
-	31,  // 77: tempestvideo.v1.InstallationsService.GetInstallation:input_type -> tempestvideo.v1.GetInstallationRequest
-	12,  // 78: tempestvideo.v1.InstallationsService.CreateInstallation:input_type -> tempestvideo.v1.CreateInstallationRequest
-	33,  // 79: tempestvideo.v1.InstallationsService.UpdateInstallation:input_type -> tempestvideo.v1.UpdateInstallationRequest
-	35,  // 80: tempestvideo.v1.InstallationsService.DeleteInstallation:input_type -> tempestvideo.v1.DeleteInstallationRequest
-	95,  // 81: tempestvideo.v1.MembersService.ListTenantAdmins:input_type -> tempestvideo.v1.ListTenantAdminsRequest
-	97,  // 82: tempestvideo.v1.MembersService.AddTenantAdmin:input_type -> tempestvideo.v1.AddTenantAdminRequest
-	103, // 83: tempestvideo.v1.MembersService.RemoveTenantAdmin:input_type -> tempestvideo.v1.RemoveTenantAdminRequest
-	86,  // 84: tempestvideo.v1.MembersService.ListInstallationMembers:input_type -> tempestvideo.v1.ListInstallationMembersRequest
-	89,  // 85: tempestvideo.v1.MembersService.AddInstallationMember:input_type -> tempestvideo.v1.AddInstallationMemberRequest
-	91,  // 86: tempestvideo.v1.MembersService.UpdateInstallationMember:input_type -> tempestvideo.v1.UpdateInstallationMemberRequest
-	93,  // 87: tempestvideo.v1.MembersService.RemoveInstallationMember:input_type -> tempestvideo.v1.RemoveInstallationMemberRequest
-	101, // 88: tempestvideo.v1.MembersService.UpdatePendingAccess:input_type -> tempestvideo.v1.UpdatePendingAccessRequest
-	99,  // 89: tempestvideo.v1.MembersService.CancelPendingAccess:input_type -> tempestvideo.v1.CancelPendingAccessRequest
-	41,  // 90: tempestvideo.v1.ConnectorsService.ListConnectors:input_type -> tempestvideo.v1.ListConnectorsRequest
-	14,  // 91: tempestvideo.v1.ConnectorsService.CreateInstallationConnector:input_type -> tempestvideo.v1.CreateInstallationConnectorRequest
-	37,  // 92: tempestvideo.v1.ConnectorsService.RenameConnector:input_type -> tempestvideo.v1.RenameConnectorRequest
-	16,  // 93: tempestvideo.v1.ConnectorsService.RegenerateLicenseKey:input_type -> tempestvideo.v1.RegenerateLicenseKeyRequest
-	18,  // 94: tempestvideo.v1.ConnectorsService.RevokeConnector:input_type -> tempestvideo.v1.RevokeConnectorRequest
-	39,  // 95: tempestvideo.v1.ConnectorsService.DeleteConnector:input_type -> tempestvideo.v1.DeleteConnectorRequest
-	51,  // 96: tempestvideo.v1.ChannelsService.ListChannels:input_type -> tempestvideo.v1.ListChannelsRequest
-	53,  // 97: tempestvideo.v1.ChannelsService.CreateChannel:input_type -> tempestvideo.v1.CreateChannelRequest
-	55,  // 98: tempestvideo.v1.ChannelsService.UpdateChannel:input_type -> tempestvideo.v1.UpdateChannelRequest
-	57,  // 99: tempestvideo.v1.ChannelsService.DeleteChannel:input_type -> tempestvideo.v1.DeleteChannelRequest
-	59,  // 100: tempestvideo.v1.ChannelsService.SetChannelIcon:input_type -> tempestvideo.v1.SetChannelIconRequest
-	61,  // 101: tempestvideo.v1.ChannelsService.DeleteChannelIcon:input_type -> tempestvideo.v1.DeleteChannelIconRequest
-	63,  // 102: tempestvideo.v1.DevicesService.ListDevices:input_type -> tempestvideo.v1.ListDevicesRequest
-	65,  // 103: tempestvideo.v1.DevicesService.CreateDevice:input_type -> tempestvideo.v1.CreateDeviceRequest
-	67,  // 104: tempestvideo.v1.DevicesService.UpdateDevice:input_type -> tempestvideo.v1.UpdateDeviceRequest
-	69,  // 105: tempestvideo.v1.DevicesService.DeleteDevice:input_type -> tempestvideo.v1.DeleteDeviceRequest
-	71,  // 106: tempestvideo.v1.DevicesService.SetDeviceChannel:input_type -> tempestvideo.v1.SetDeviceChannelRequest
-	74,  // 107: tempestvideo.v1.DevicesService.GetChannelRequest:input_type -> tempestvideo.v1.GetChannelRequestRequest
-	78,  // 108: tempestvideo.v1.DevicesService.ProvisionDevice:input_type -> tempestvideo.v1.ProvisionDeviceRequest
-	81,  // 109: tempestvideo.v1.DevicesService.GetDeviceTask:input_type -> tempestvideo.v1.GetDeviceTaskRequest
-	106, // 110: tempestvideo.v1.ApiKeysService.CreateApiKey:input_type -> tempestvideo.v1.CreateApiKeyRequest
-	108, // 111: tempestvideo.v1.ApiKeysService.ListApiKeys:input_type -> tempestvideo.v1.ListApiKeysRequest
-	110, // 112: tempestvideo.v1.ApiKeysService.DeleteApiKey:input_type -> tempestvideo.v1.DeleteApiKeyRequest
-	22,  // 113: tempestvideo.v1.ProfileService.UpsertProfile:output_type -> tempestvideo.v1.UpsertProfileResponse
-	26,  // 114: tempestvideo.v1.TenantsService.ListTenants:output_type -> tempestvideo.v1.ListTenantsResponse
-	28,  // 115: tempestvideo.v1.TenantsService.UpdateTenant:output_type -> tempestvideo.v1.UpdateTenantResponse
-	30,  // 116: tempestvideo.v1.InstallationsService.ListInstallations:output_type -> tempestvideo.v1.ListInstallationsResponse
-	32,  // 117: tempestvideo.v1.InstallationsService.GetInstallation:output_type -> tempestvideo.v1.GetInstallationResponse
-	13,  // 118: tempestvideo.v1.InstallationsService.CreateInstallation:output_type -> tempestvideo.v1.CreateInstallationResponse
-	34,  // 119: tempestvideo.v1.InstallationsService.UpdateInstallation:output_type -> tempestvideo.v1.UpdateInstallationResponse
-	36,  // 120: tempestvideo.v1.InstallationsService.DeleteInstallation:output_type -> tempestvideo.v1.DeleteInstallationResponse
-	96,  // 121: tempestvideo.v1.MembersService.ListTenantAdmins:output_type -> tempestvideo.v1.ListTenantAdminsResponse
-	98,  // 122: tempestvideo.v1.MembersService.AddTenantAdmin:output_type -> tempestvideo.v1.AddTenantAdminResponse
-	104, // 123: tempestvideo.v1.MembersService.RemoveTenantAdmin:output_type -> tempestvideo.v1.RemoveTenantAdminResponse
-	87,  // 124: tempestvideo.v1.MembersService.ListInstallationMembers:output_type -> tempestvideo.v1.ListInstallationMembersResponse
-	90,  // 125: tempestvideo.v1.MembersService.AddInstallationMember:output_type -> tempestvideo.v1.AddInstallationMemberResponse
-	92,  // 126: tempestvideo.v1.MembersService.UpdateInstallationMember:output_type -> tempestvideo.v1.UpdateInstallationMemberResponse
-	94,  // 127: tempestvideo.v1.MembersService.RemoveInstallationMember:output_type -> tempestvideo.v1.RemoveInstallationMemberResponse
-	102, // 128: tempestvideo.v1.MembersService.UpdatePendingAccess:output_type -> tempestvideo.v1.UpdatePendingAccessResponse
-	100, // 129: tempestvideo.v1.MembersService.CancelPendingAccess:output_type -> tempestvideo.v1.CancelPendingAccessResponse
-	42,  // 130: tempestvideo.v1.ConnectorsService.ListConnectors:output_type -> tempestvideo.v1.ListConnectorsResponse
-	15,  // 131: tempestvideo.v1.ConnectorsService.CreateInstallationConnector:output_type -> tempestvideo.v1.CreateInstallationConnectorResponse
-	38,  // 132: tempestvideo.v1.ConnectorsService.RenameConnector:output_type -> tempestvideo.v1.RenameConnectorResponse
-	17,  // 133: tempestvideo.v1.ConnectorsService.RegenerateLicenseKey:output_type -> tempestvideo.v1.RegenerateLicenseKeyResponse
-	19,  // 134: tempestvideo.v1.ConnectorsService.RevokeConnector:output_type -> tempestvideo.v1.RevokeConnectorResponse
-	40,  // 135: tempestvideo.v1.ConnectorsService.DeleteConnector:output_type -> tempestvideo.v1.DeleteConnectorResponse
-	52,  // 136: tempestvideo.v1.ChannelsService.ListChannels:output_type -> tempestvideo.v1.ListChannelsResponse
-	54,  // 137: tempestvideo.v1.ChannelsService.CreateChannel:output_type -> tempestvideo.v1.CreateChannelResponse
-	56,  // 138: tempestvideo.v1.ChannelsService.UpdateChannel:output_type -> tempestvideo.v1.UpdateChannelResponse
-	58,  // 139: tempestvideo.v1.ChannelsService.DeleteChannel:output_type -> tempestvideo.v1.DeleteChannelResponse
-	60,  // 140: tempestvideo.v1.ChannelsService.SetChannelIcon:output_type -> tempestvideo.v1.SetChannelIconResponse
-	62,  // 141: tempestvideo.v1.ChannelsService.DeleteChannelIcon:output_type -> tempestvideo.v1.DeleteChannelIconResponse
-	64,  // 142: tempestvideo.v1.DevicesService.ListDevices:output_type -> tempestvideo.v1.ListDevicesResponse
-	66,  // 143: tempestvideo.v1.DevicesService.CreateDevice:output_type -> tempestvideo.v1.CreateDeviceResponse
-	68,  // 144: tempestvideo.v1.DevicesService.UpdateDevice:output_type -> tempestvideo.v1.UpdateDeviceResponse
-	70,  // 145: tempestvideo.v1.DevicesService.DeleteDevice:output_type -> tempestvideo.v1.DeleteDeviceResponse
-	73,  // 146: tempestvideo.v1.DevicesService.SetDeviceChannel:output_type -> tempestvideo.v1.SetDeviceChannelResponse
-	75,  // 147: tempestvideo.v1.DevicesService.GetChannelRequest:output_type -> tempestvideo.v1.GetChannelRequestResponse
-	79,  // 148: tempestvideo.v1.DevicesService.ProvisionDevice:output_type -> tempestvideo.v1.ProvisionDeviceResponse
-	82,  // 149: tempestvideo.v1.DevicesService.GetDeviceTask:output_type -> tempestvideo.v1.GetDeviceTaskResponse
-	107, // 150: tempestvideo.v1.ApiKeysService.CreateApiKey:output_type -> tempestvideo.v1.CreateApiKeyResponse
-	109, // 151: tempestvideo.v1.ApiKeysService.ListApiKeys:output_type -> tempestvideo.v1.ListApiKeysResponse
-	111, // 152: tempestvideo.v1.ApiKeysService.DeleteApiKey:output_type -> tempestvideo.v1.DeleteApiKeyResponse
-	113, // [113:153] is the sub-list for method output_type
-	73,  // [73:113] is the sub-list for method input_type
-	70,  // [70:73] is the sub-list for extension type_name
-	66,  // [66:70] is the sub-list for extension extendee
-	0,   // [0:66] is the sub-list for field type_name
+	21,  // 1: tempestvideo.v1.UpdateProfileResponse.profile:type_name -> tempestvideo.v1.Profile
+	9,   // 2: tempestvideo.v1.TenantAccess.tenant:type_name -> tempestvideo.v1.Tenant
+	0,   // 3: tempestvideo.v1.TenantAccess.role:type_name -> tempestvideo.v1.Permission
+	10,  // 4: tempestvideo.v1.InstallationAccess.installation:type_name -> tempestvideo.v1.Installation
+	0,   // 5: tempestvideo.v1.InstallationAccess.role:type_name -> tempestvideo.v1.Permission
+	27,  // 6: tempestvideo.v1.ListTenantsResponse.tenants:type_name -> tempestvideo.v1.TenantAccess
+	9,   // 7: tempestvideo.v1.UpdateTenantResponse.tenant:type_name -> tempestvideo.v1.Tenant
+	28,  // 8: tempestvideo.v1.ListInstallationsResponse.installations:type_name -> tempestvideo.v1.InstallationAccess
+	28,  // 9: tempestvideo.v1.GetInstallationResponse.installation:type_name -> tempestvideo.v1.InstallationAccess
+	9,   // 10: tempestvideo.v1.GetInstallationResponse.tenant:type_name -> tempestvideo.v1.Tenant
+	10,  // 11: tempestvideo.v1.UpdateInstallationResponse.installation:type_name -> tempestvideo.v1.Installation
+	11,  // 12: tempestvideo.v1.ListConnectorsResponse.connectors:type_name -> tempestvideo.v1.Connector
+	1,   // 13: tempestvideo.v1.ChannelSource.type:type_name -> tempestvideo.v1.SourceType
+	47,  // 14: tempestvideo.v1.Channel.sources:type_name -> tempestvideo.v1.ChannelSource
+	49,  // 15: tempestvideo.v1.Channel.availability:type_name -> tempestvideo.v1.ChannelAvailability
+	1,   // 16: tempestvideo.v1.ChannelAvailability.source_type:type_name -> tempestvideo.v1.SourceType
+	50,  // 17: tempestvideo.v1.DeviceCredentials.none:type_name -> tempestvideo.v1.NoAuth
+	51,  // 18: tempestvideo.v1.DeviceCredentials.username_password:type_name -> tempestvideo.v1.UsernamePasswordAuth
+	52,  // 19: tempestvideo.v1.DeviceCredentials.api_key:type_name -> tempestvideo.v1.ApiKeyAuth
+	2,   // 20: tempestvideo.v1.Device.type:type_name -> tempestvideo.v1.DeviceType
+	4,   // 21: tempestvideo.v1.Device.model:type_name -> tempestvideo.v1.DeviceModel
+	3,   // 22: tempestvideo.v1.Device.auth_method:type_name -> tempestvideo.v1.DeviceAuthMethod
+	5,   // 23: tempestvideo.v1.Device.status:type_name -> tempestvideo.v1.DeviceStatus
+	48,  // 24: tempestvideo.v1.ListChannelsResponse.channels:type_name -> tempestvideo.v1.Channel
+	47,  // 25: tempestvideo.v1.CreateChannelRequest.sources:type_name -> tempestvideo.v1.ChannelSource
+	48,  // 26: tempestvideo.v1.CreateChannelResponse.channel:type_name -> tempestvideo.v1.Channel
+	47,  // 27: tempestvideo.v1.UpdateChannelRequest.sources:type_name -> tempestvideo.v1.ChannelSource
+	48,  // 28: tempestvideo.v1.UpdateChannelResponse.channel:type_name -> tempestvideo.v1.Channel
+	48,  // 29: tempestvideo.v1.SetChannelIconResponse.channel:type_name -> tempestvideo.v1.Channel
+	48,  // 30: tempestvideo.v1.DeleteChannelIconResponse.channel:type_name -> tempestvideo.v1.Channel
+	54,  // 31: tempestvideo.v1.ListDevicesResponse.devices:type_name -> tempestvideo.v1.Device
+	4,   // 32: tempestvideo.v1.CreateDeviceRequest.model:type_name -> tempestvideo.v1.DeviceModel
+	53,  // 33: tempestvideo.v1.CreateDeviceRequest.credentials:type_name -> tempestvideo.v1.DeviceCredentials
+	54,  // 34: tempestvideo.v1.CreateDeviceResponse.device:type_name -> tempestvideo.v1.Device
+	4,   // 35: tempestvideo.v1.UpdateDeviceRequest.model:type_name -> tempestvideo.v1.DeviceModel
+	53,  // 36: tempestvideo.v1.UpdateDeviceRequest.credentials:type_name -> tempestvideo.v1.DeviceCredentials
+	54,  // 37: tempestvideo.v1.UpdateDeviceResponse.device:type_name -> tempestvideo.v1.Device
+	6,   // 38: tempestvideo.v1.ChannelRequest.status:type_name -> tempestvideo.v1.ChannelRequestStatus
+	54,  // 39: tempestvideo.v1.SetDeviceChannelResponse.device:type_name -> tempestvideo.v1.Device
+	76,  // 40: tempestvideo.v1.SetDeviceChannelResponse.request:type_name -> tempestvideo.v1.ChannelRequest
+	76,  // 41: tempestvideo.v1.GetChannelRequestResponse.request:type_name -> tempestvideo.v1.ChannelRequest
+	54,  // 42: tempestvideo.v1.GetChannelRequestResponse.device:type_name -> tempestvideo.v1.Device
+	81,  // 43: tempestvideo.v1.ZeeveeGuideFilter.include:type_name -> tempestvideo.v1.ChannelNumbers
+	80,  // 44: tempestvideo.v1.ProvisionDeviceRequest.zeevee_guide:type_name -> tempestvideo.v1.ZeeveeGuideFilter
+	84,  // 45: tempestvideo.v1.ProvisionDeviceResponse.task:type_name -> tempestvideo.v1.DeviceTask
+	7,   // 46: tempestvideo.v1.DeviceTask.status:type_name -> tempestvideo.v1.DeviceTaskStatus
+	84,  // 47: tempestvideo.v1.GetDeviceTaskResponse.task:type_name -> tempestvideo.v1.DeviceTask
+	87,  // 48: tempestvideo.v1.InstallationMember.profile:type_name -> tempestvideo.v1.MemberProfile
+	8,   // 49: tempestvideo.v1.InstallationMember.role:type_name -> tempestvideo.v1.InstallationRole
+	87,  // 50: tempestvideo.v1.TenantAdmin.profile:type_name -> tempestvideo.v1.MemberProfile
+	88,  // 51: tempestvideo.v1.ListInstallationMembersResponse.members:type_name -> tempestvideo.v1.InstallationMember
+	92,  // 52: tempestvideo.v1.ListInstallationMembersResponse.pending:type_name -> tempestvideo.v1.PendingAccess
+	8,   // 53: tempestvideo.v1.PendingAccess.role:type_name -> tempestvideo.v1.InstallationRole
+	8,   // 54: tempestvideo.v1.AddInstallationMemberRequest.role:type_name -> tempestvideo.v1.InstallationRole
+	88,  // 55: tempestvideo.v1.AddInstallationMemberResponse.member:type_name -> tempestvideo.v1.InstallationMember
+	92,  // 56: tempestvideo.v1.AddInstallationMemberResponse.pending:type_name -> tempestvideo.v1.PendingAccess
+	8,   // 57: tempestvideo.v1.UpdateInstallationMemberRequest.role:type_name -> tempestvideo.v1.InstallationRole
+	88,  // 58: tempestvideo.v1.UpdateInstallationMemberResponse.member:type_name -> tempestvideo.v1.InstallationMember
+	89,  // 59: tempestvideo.v1.ListTenantAdminsResponse.admins:type_name -> tempestvideo.v1.TenantAdmin
+	92,  // 60: tempestvideo.v1.ListTenantAdminsResponse.pending:type_name -> tempestvideo.v1.PendingAccess
+	89,  // 61: tempestvideo.v1.AddTenantAdminResponse.admin:type_name -> tempestvideo.v1.TenantAdmin
+	92,  // 62: tempestvideo.v1.AddTenantAdminResponse.pending:type_name -> tempestvideo.v1.PendingAccess
+	8,   // 63: tempestvideo.v1.UpdatePendingAccessRequest.role:type_name -> tempestvideo.v1.InstallationRole
+	92,  // 64: tempestvideo.v1.UpdatePendingAccessResponse.pending:type_name -> tempestvideo.v1.PendingAccess
+	109, // 65: tempestvideo.v1.CreateApiKeyResponse.api_key:type_name -> tempestvideo.v1.ApiKey
+	109, // 66: tempestvideo.v1.ListApiKeysResponse.api_keys:type_name -> tempestvideo.v1.ApiKey
+	116, // 67: tempestvideo.v1.device_type:extendee -> google.protobuf.EnumValueOptions
+	116, // 68: tempestvideo.v1.auth_methods:extendee -> google.protobuf.EnumValueOptions
+	116, // 69: tempestvideo.v1.source_types:extendee -> google.protobuf.EnumValueOptions
+	116, // 70: tempestvideo.v1.provisionable:extendee -> google.protobuf.EnumValueOptions
+	2,   // 71: tempestvideo.v1.device_type:type_name -> tempestvideo.v1.DeviceType
+	3,   // 72: tempestvideo.v1.auth_methods:type_name -> tempestvideo.v1.DeviceAuthMethod
+	1,   // 73: tempestvideo.v1.source_types:type_name -> tempestvideo.v1.SourceType
+	20,  // 74: tempestvideo.v1.ProfileService.UpsertProfile:input_type -> tempestvideo.v1.UpsertProfileRequest
+	23,  // 75: tempestvideo.v1.ProfileService.UpdateProfile:input_type -> tempestvideo.v1.UpdateProfileRequest
+	25,  // 76: tempestvideo.v1.ProfileService.SetPassword:input_type -> tempestvideo.v1.SetPasswordRequest
+	29,  // 77: tempestvideo.v1.TenantsService.ListTenants:input_type -> tempestvideo.v1.ListTenantsRequest
+	31,  // 78: tempestvideo.v1.TenantsService.UpdateTenant:input_type -> tempestvideo.v1.UpdateTenantRequest
+	33,  // 79: tempestvideo.v1.InstallationsService.ListInstallations:input_type -> tempestvideo.v1.ListInstallationsRequest
+	35,  // 80: tempestvideo.v1.InstallationsService.GetInstallation:input_type -> tempestvideo.v1.GetInstallationRequest
+	12,  // 81: tempestvideo.v1.InstallationsService.CreateInstallation:input_type -> tempestvideo.v1.CreateInstallationRequest
+	37,  // 82: tempestvideo.v1.InstallationsService.UpdateInstallation:input_type -> tempestvideo.v1.UpdateInstallationRequest
+	39,  // 83: tempestvideo.v1.InstallationsService.DeleteInstallation:input_type -> tempestvideo.v1.DeleteInstallationRequest
+	99,  // 84: tempestvideo.v1.MembersService.ListTenantAdmins:input_type -> tempestvideo.v1.ListTenantAdminsRequest
+	101, // 85: tempestvideo.v1.MembersService.AddTenantAdmin:input_type -> tempestvideo.v1.AddTenantAdminRequest
+	107, // 86: tempestvideo.v1.MembersService.RemoveTenantAdmin:input_type -> tempestvideo.v1.RemoveTenantAdminRequest
+	90,  // 87: tempestvideo.v1.MembersService.ListInstallationMembers:input_type -> tempestvideo.v1.ListInstallationMembersRequest
+	93,  // 88: tempestvideo.v1.MembersService.AddInstallationMember:input_type -> tempestvideo.v1.AddInstallationMemberRequest
+	95,  // 89: tempestvideo.v1.MembersService.UpdateInstallationMember:input_type -> tempestvideo.v1.UpdateInstallationMemberRequest
+	97,  // 90: tempestvideo.v1.MembersService.RemoveInstallationMember:input_type -> tempestvideo.v1.RemoveInstallationMemberRequest
+	105, // 91: tempestvideo.v1.MembersService.UpdatePendingAccess:input_type -> tempestvideo.v1.UpdatePendingAccessRequest
+	103, // 92: tempestvideo.v1.MembersService.CancelPendingAccess:input_type -> tempestvideo.v1.CancelPendingAccessRequest
+	45,  // 93: tempestvideo.v1.ConnectorsService.ListConnectors:input_type -> tempestvideo.v1.ListConnectorsRequest
+	14,  // 94: tempestvideo.v1.ConnectorsService.CreateInstallationConnector:input_type -> tempestvideo.v1.CreateInstallationConnectorRequest
+	41,  // 95: tempestvideo.v1.ConnectorsService.RenameConnector:input_type -> tempestvideo.v1.RenameConnectorRequest
+	16,  // 96: tempestvideo.v1.ConnectorsService.RegenerateLicenseKey:input_type -> tempestvideo.v1.RegenerateLicenseKeyRequest
+	18,  // 97: tempestvideo.v1.ConnectorsService.RevokeConnector:input_type -> tempestvideo.v1.RevokeConnectorRequest
+	43,  // 98: tempestvideo.v1.ConnectorsService.DeleteConnector:input_type -> tempestvideo.v1.DeleteConnectorRequest
+	55,  // 99: tempestvideo.v1.ChannelsService.ListChannels:input_type -> tempestvideo.v1.ListChannelsRequest
+	57,  // 100: tempestvideo.v1.ChannelsService.CreateChannel:input_type -> tempestvideo.v1.CreateChannelRequest
+	59,  // 101: tempestvideo.v1.ChannelsService.UpdateChannel:input_type -> tempestvideo.v1.UpdateChannelRequest
+	61,  // 102: tempestvideo.v1.ChannelsService.DeleteChannel:input_type -> tempestvideo.v1.DeleteChannelRequest
+	63,  // 103: tempestvideo.v1.ChannelsService.SetChannelIcon:input_type -> tempestvideo.v1.SetChannelIconRequest
+	65,  // 104: tempestvideo.v1.ChannelsService.DeleteChannelIcon:input_type -> tempestvideo.v1.DeleteChannelIconRequest
+	67,  // 105: tempestvideo.v1.DevicesService.ListDevices:input_type -> tempestvideo.v1.ListDevicesRequest
+	69,  // 106: tempestvideo.v1.DevicesService.CreateDevice:input_type -> tempestvideo.v1.CreateDeviceRequest
+	71,  // 107: tempestvideo.v1.DevicesService.UpdateDevice:input_type -> tempestvideo.v1.UpdateDeviceRequest
+	73,  // 108: tempestvideo.v1.DevicesService.DeleteDevice:input_type -> tempestvideo.v1.DeleteDeviceRequest
+	75,  // 109: tempestvideo.v1.DevicesService.SetDeviceChannel:input_type -> tempestvideo.v1.SetDeviceChannelRequest
+	78,  // 110: tempestvideo.v1.DevicesService.GetChannelRequest:input_type -> tempestvideo.v1.GetChannelRequestRequest
+	82,  // 111: tempestvideo.v1.DevicesService.ProvisionDevice:input_type -> tempestvideo.v1.ProvisionDeviceRequest
+	85,  // 112: tempestvideo.v1.DevicesService.GetDeviceTask:input_type -> tempestvideo.v1.GetDeviceTaskRequest
+	110, // 113: tempestvideo.v1.ApiKeysService.CreateApiKey:input_type -> tempestvideo.v1.CreateApiKeyRequest
+	112, // 114: tempestvideo.v1.ApiKeysService.ListApiKeys:input_type -> tempestvideo.v1.ListApiKeysRequest
+	114, // 115: tempestvideo.v1.ApiKeysService.DeleteApiKey:input_type -> tempestvideo.v1.DeleteApiKeyRequest
+	22,  // 116: tempestvideo.v1.ProfileService.UpsertProfile:output_type -> tempestvideo.v1.UpsertProfileResponse
+	24,  // 117: tempestvideo.v1.ProfileService.UpdateProfile:output_type -> tempestvideo.v1.UpdateProfileResponse
+	26,  // 118: tempestvideo.v1.ProfileService.SetPassword:output_type -> tempestvideo.v1.SetPasswordResponse
+	30,  // 119: tempestvideo.v1.TenantsService.ListTenants:output_type -> tempestvideo.v1.ListTenantsResponse
+	32,  // 120: tempestvideo.v1.TenantsService.UpdateTenant:output_type -> tempestvideo.v1.UpdateTenantResponse
+	34,  // 121: tempestvideo.v1.InstallationsService.ListInstallations:output_type -> tempestvideo.v1.ListInstallationsResponse
+	36,  // 122: tempestvideo.v1.InstallationsService.GetInstallation:output_type -> tempestvideo.v1.GetInstallationResponse
+	13,  // 123: tempestvideo.v1.InstallationsService.CreateInstallation:output_type -> tempestvideo.v1.CreateInstallationResponse
+	38,  // 124: tempestvideo.v1.InstallationsService.UpdateInstallation:output_type -> tempestvideo.v1.UpdateInstallationResponse
+	40,  // 125: tempestvideo.v1.InstallationsService.DeleteInstallation:output_type -> tempestvideo.v1.DeleteInstallationResponse
+	100, // 126: tempestvideo.v1.MembersService.ListTenantAdmins:output_type -> tempestvideo.v1.ListTenantAdminsResponse
+	102, // 127: tempestvideo.v1.MembersService.AddTenantAdmin:output_type -> tempestvideo.v1.AddTenantAdminResponse
+	108, // 128: tempestvideo.v1.MembersService.RemoveTenantAdmin:output_type -> tempestvideo.v1.RemoveTenantAdminResponse
+	91,  // 129: tempestvideo.v1.MembersService.ListInstallationMembers:output_type -> tempestvideo.v1.ListInstallationMembersResponse
+	94,  // 130: tempestvideo.v1.MembersService.AddInstallationMember:output_type -> tempestvideo.v1.AddInstallationMemberResponse
+	96,  // 131: tempestvideo.v1.MembersService.UpdateInstallationMember:output_type -> tempestvideo.v1.UpdateInstallationMemberResponse
+	98,  // 132: tempestvideo.v1.MembersService.RemoveInstallationMember:output_type -> tempestvideo.v1.RemoveInstallationMemberResponse
+	106, // 133: tempestvideo.v1.MembersService.UpdatePendingAccess:output_type -> tempestvideo.v1.UpdatePendingAccessResponse
+	104, // 134: tempestvideo.v1.MembersService.CancelPendingAccess:output_type -> tempestvideo.v1.CancelPendingAccessResponse
+	46,  // 135: tempestvideo.v1.ConnectorsService.ListConnectors:output_type -> tempestvideo.v1.ListConnectorsResponse
+	15,  // 136: tempestvideo.v1.ConnectorsService.CreateInstallationConnector:output_type -> tempestvideo.v1.CreateInstallationConnectorResponse
+	42,  // 137: tempestvideo.v1.ConnectorsService.RenameConnector:output_type -> tempestvideo.v1.RenameConnectorResponse
+	17,  // 138: tempestvideo.v1.ConnectorsService.RegenerateLicenseKey:output_type -> tempestvideo.v1.RegenerateLicenseKeyResponse
+	19,  // 139: tempestvideo.v1.ConnectorsService.RevokeConnector:output_type -> tempestvideo.v1.RevokeConnectorResponse
+	44,  // 140: tempestvideo.v1.ConnectorsService.DeleteConnector:output_type -> tempestvideo.v1.DeleteConnectorResponse
+	56,  // 141: tempestvideo.v1.ChannelsService.ListChannels:output_type -> tempestvideo.v1.ListChannelsResponse
+	58,  // 142: tempestvideo.v1.ChannelsService.CreateChannel:output_type -> tempestvideo.v1.CreateChannelResponse
+	60,  // 143: tempestvideo.v1.ChannelsService.UpdateChannel:output_type -> tempestvideo.v1.UpdateChannelResponse
+	62,  // 144: tempestvideo.v1.ChannelsService.DeleteChannel:output_type -> tempestvideo.v1.DeleteChannelResponse
+	64,  // 145: tempestvideo.v1.ChannelsService.SetChannelIcon:output_type -> tempestvideo.v1.SetChannelIconResponse
+	66,  // 146: tempestvideo.v1.ChannelsService.DeleteChannelIcon:output_type -> tempestvideo.v1.DeleteChannelIconResponse
+	68,  // 147: tempestvideo.v1.DevicesService.ListDevices:output_type -> tempestvideo.v1.ListDevicesResponse
+	70,  // 148: tempestvideo.v1.DevicesService.CreateDevice:output_type -> tempestvideo.v1.CreateDeviceResponse
+	72,  // 149: tempestvideo.v1.DevicesService.UpdateDevice:output_type -> tempestvideo.v1.UpdateDeviceResponse
+	74,  // 150: tempestvideo.v1.DevicesService.DeleteDevice:output_type -> tempestvideo.v1.DeleteDeviceResponse
+	77,  // 151: tempestvideo.v1.DevicesService.SetDeviceChannel:output_type -> tempestvideo.v1.SetDeviceChannelResponse
+	79,  // 152: tempestvideo.v1.DevicesService.GetChannelRequest:output_type -> tempestvideo.v1.GetChannelRequestResponse
+	83,  // 153: tempestvideo.v1.DevicesService.ProvisionDevice:output_type -> tempestvideo.v1.ProvisionDeviceResponse
+	86,  // 154: tempestvideo.v1.DevicesService.GetDeviceTask:output_type -> tempestvideo.v1.GetDeviceTaskResponse
+	111, // 155: tempestvideo.v1.ApiKeysService.CreateApiKey:output_type -> tempestvideo.v1.CreateApiKeyResponse
+	113, // 156: tempestvideo.v1.ApiKeysService.ListApiKeys:output_type -> tempestvideo.v1.ListApiKeysResponse
+	115, // 157: tempestvideo.v1.ApiKeysService.DeleteApiKey:output_type -> tempestvideo.v1.DeleteApiKeyResponse
+	116, // [116:158] is the sub-list for method output_type
+	74,  // [74:116] is the sub-list for method input_type
+	71,  // [71:74] is the sub-list for extension type_name
+	67,  // [67:71] is the sub-list for extension extendee
+	0,   // [0:67] is the sub-list for field type_name
 }
 
 func init() { file_tempestvideo_v1_api_proto_init() }
@@ -7112,25 +7313,25 @@ func file_tempestvideo_v1_api_proto_init() {
 	file_tempestvideo_v1_api_proto_msgTypes[0].OneofWrappers = []any{}
 	file_tempestvideo_v1_api_proto_msgTypes[2].OneofWrappers = []any{}
 	file_tempestvideo_v1_api_proto_msgTypes[12].OneofWrappers = []any{}
-	file_tempestvideo_v1_api_proto_msgTypes[40].OneofWrappers = []any{
+	file_tempestvideo_v1_api_proto_msgTypes[44].OneofWrappers = []any{
 		(*DeviceCredentials_None)(nil),
 		(*DeviceCredentials_UsernamePassword)(nil),
 		(*DeviceCredentials_ApiKey)(nil),
 	}
-	file_tempestvideo_v1_api_proto_msgTypes[41].OneofWrappers = []any{}
-	file_tempestvideo_v1_api_proto_msgTypes[58].OneofWrappers = []any{}
-	file_tempestvideo_v1_api_proto_msgTypes[63].OneofWrappers = []any{}
+	file_tempestvideo_v1_api_proto_msgTypes[45].OneofWrappers = []any{}
+	file_tempestvideo_v1_api_proto_msgTypes[62].OneofWrappers = []any{}
 	file_tempestvideo_v1_api_proto_msgTypes[67].OneofWrappers = []any{}
 	file_tempestvideo_v1_api_proto_msgTypes[71].OneofWrappers = []any{}
-	file_tempestvideo_v1_api_proto_msgTypes[74].OneofWrappers = []any{}
-	file_tempestvideo_v1_api_proto_msgTypes[96].OneofWrappers = []any{}
+	file_tempestvideo_v1_api_proto_msgTypes[75].OneofWrappers = []any{}
+	file_tempestvideo_v1_api_proto_msgTypes[78].OneofWrappers = []any{}
+	file_tempestvideo_v1_api_proto_msgTypes[100].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_tempestvideo_v1_api_proto_rawDesc), len(file_tempestvideo_v1_api_proto_rawDesc)),
 			NumEnums:      9,
-			NumMessages:   103,
+			NumMessages:   107,
 			NumExtensions: 4,
 			NumServices:   8,
 		},

@@ -58,6 +58,12 @@ const (
 	// ProfileServiceUpsertProfileProcedure is the fully-qualified name of the ProfileService's
 	// UpsertProfile RPC.
 	ProfileServiceUpsertProfileProcedure = "/tempestvideo.v1.ProfileService/UpsertProfile"
+	// ProfileServiceUpdateProfileProcedure is the fully-qualified name of the ProfileService's
+	// UpdateProfile RPC.
+	ProfileServiceUpdateProfileProcedure = "/tempestvideo.v1.ProfileService/UpdateProfile"
+	// ProfileServiceSetPasswordProcedure is the fully-qualified name of the ProfileService's
+	// SetPassword RPC.
+	ProfileServiceSetPasswordProcedure = "/tempestvideo.v1.ProfileService/SetPassword"
 	// TenantsServiceListTenantsProcedure is the fully-qualified name of the TenantsService's
 	// ListTenants RPC.
 	TenantsServiceListTenantsProcedure = "/tempestvideo.v1.TenantsService/ListTenants"
@@ -180,6 +186,8 @@ const (
 // ProfileServiceClient is a client for the tempestvideo.v1.ProfileService service.
 type ProfileServiceClient interface {
 	UpsertProfile(context.Context, *connect.Request[tempestvideov1.UpsertProfileRequest]) (*connect.Response[tempestvideov1.UpsertProfileResponse], error)
+	UpdateProfile(context.Context, *connect.Request[tempestvideov1.UpdateProfileRequest]) (*connect.Response[tempestvideov1.UpdateProfileResponse], error)
+	SetPassword(context.Context, *connect.Request[tempestvideov1.SetPasswordRequest]) (*connect.Response[tempestvideov1.SetPasswordResponse], error)
 }
 
 // NewProfileServiceClient constructs a client for the tempestvideo.v1.ProfileService service. By
@@ -199,12 +207,26 @@ func NewProfileServiceClient(httpClient connect.HTTPClient, baseURL string, opts
 			connect.WithSchema(profileServiceMethods.ByName("UpsertProfile")),
 			connect.WithClientOptions(opts...),
 		),
+		updateProfile: connect.NewClient[tempestvideov1.UpdateProfileRequest, tempestvideov1.UpdateProfileResponse](
+			httpClient,
+			baseURL+ProfileServiceUpdateProfileProcedure,
+			connect.WithSchema(profileServiceMethods.ByName("UpdateProfile")),
+			connect.WithClientOptions(opts...),
+		),
+		setPassword: connect.NewClient[tempestvideov1.SetPasswordRequest, tempestvideov1.SetPasswordResponse](
+			httpClient,
+			baseURL+ProfileServiceSetPasswordProcedure,
+			connect.WithSchema(profileServiceMethods.ByName("SetPassword")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
 // profileServiceClient implements ProfileServiceClient.
 type profileServiceClient struct {
 	upsertProfile *connect.Client[tempestvideov1.UpsertProfileRequest, tempestvideov1.UpsertProfileResponse]
+	updateProfile *connect.Client[tempestvideov1.UpdateProfileRequest, tempestvideov1.UpdateProfileResponse]
+	setPassword   *connect.Client[tempestvideov1.SetPasswordRequest, tempestvideov1.SetPasswordResponse]
 }
 
 // UpsertProfile calls tempestvideo.v1.ProfileService.UpsertProfile.
@@ -212,9 +234,21 @@ func (c *profileServiceClient) UpsertProfile(ctx context.Context, req *connect.R
 	return c.upsertProfile.CallUnary(ctx, req)
 }
 
+// UpdateProfile calls tempestvideo.v1.ProfileService.UpdateProfile.
+func (c *profileServiceClient) UpdateProfile(ctx context.Context, req *connect.Request[tempestvideov1.UpdateProfileRequest]) (*connect.Response[tempestvideov1.UpdateProfileResponse], error) {
+	return c.updateProfile.CallUnary(ctx, req)
+}
+
+// SetPassword calls tempestvideo.v1.ProfileService.SetPassword.
+func (c *profileServiceClient) SetPassword(ctx context.Context, req *connect.Request[tempestvideov1.SetPasswordRequest]) (*connect.Response[tempestvideov1.SetPasswordResponse], error) {
+	return c.setPassword.CallUnary(ctx, req)
+}
+
 // ProfileServiceHandler is an implementation of the tempestvideo.v1.ProfileService service.
 type ProfileServiceHandler interface {
 	UpsertProfile(context.Context, *connect.Request[tempestvideov1.UpsertProfileRequest]) (*connect.Response[tempestvideov1.UpsertProfileResponse], error)
+	UpdateProfile(context.Context, *connect.Request[tempestvideov1.UpdateProfileRequest]) (*connect.Response[tempestvideov1.UpdateProfileResponse], error)
+	SetPassword(context.Context, *connect.Request[tempestvideov1.SetPasswordRequest]) (*connect.Response[tempestvideov1.SetPasswordResponse], error)
 }
 
 // NewProfileServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -230,10 +264,26 @@ func NewProfileServiceHandler(svc ProfileServiceHandler, opts ...connect.Handler
 		connect.WithSchema(profileServiceMethods.ByName("UpsertProfile")),
 		connect.WithHandlerOptions(opts...),
 	)
+	profileServiceUpdateProfileHandler := connect.NewUnaryHandler(
+		ProfileServiceUpdateProfileProcedure,
+		svc.UpdateProfile,
+		connect.WithSchema(profileServiceMethods.ByName("UpdateProfile")),
+		connect.WithHandlerOptions(opts...),
+	)
+	profileServiceSetPasswordHandler := connect.NewUnaryHandler(
+		ProfileServiceSetPasswordProcedure,
+		svc.SetPassword,
+		connect.WithSchema(profileServiceMethods.ByName("SetPassword")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/tempestvideo.v1.ProfileService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case ProfileServiceUpsertProfileProcedure:
 			profileServiceUpsertProfileHandler.ServeHTTP(w, r)
+		case ProfileServiceUpdateProfileProcedure:
+			profileServiceUpdateProfileHandler.ServeHTTP(w, r)
+		case ProfileServiceSetPasswordProcedure:
+			profileServiceSetPasswordHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -245,6 +295,14 @@ type UnimplementedProfileServiceHandler struct{}
 
 func (UnimplementedProfileServiceHandler) UpsertProfile(context.Context, *connect.Request[tempestvideov1.UpsertProfileRequest]) (*connect.Response[tempestvideov1.UpsertProfileResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.ProfileService.UpsertProfile is not implemented"))
+}
+
+func (UnimplementedProfileServiceHandler) UpdateProfile(context.Context, *connect.Request[tempestvideov1.UpdateProfileRequest]) (*connect.Response[tempestvideov1.UpdateProfileResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.ProfileService.UpdateProfile is not implemented"))
+}
+
+func (UnimplementedProfileServiceHandler) SetPassword(context.Context, *connect.Request[tempestvideov1.SetPasswordRequest]) (*connect.Response[tempestvideov1.SetPasswordResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.ProfileService.SetPassword is not implemented"))
 }
 
 // TenantsServiceClient is a client for the tempestvideo.v1.TenantsService service.
