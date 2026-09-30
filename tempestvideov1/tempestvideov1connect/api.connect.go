@@ -100,6 +100,9 @@ const (
 	// MembersServiceRemoveInstallationMemberProcedure is the fully-qualified name of the
 	// MembersService's RemoveInstallationMember RPC.
 	MembersServiceRemoveInstallationMemberProcedure = "/tempestvideo.v1.MembersService/RemoveInstallationMember"
+	// MembersServiceUpdatePendingAccessProcedure is the fully-qualified name of the MembersService's
+	// UpdatePendingAccess RPC.
+	MembersServiceUpdatePendingAccessProcedure = "/tempestvideo.v1.MembersService/UpdatePendingAccess"
 	// MembersServiceCancelPendingAccessProcedure is the fully-qualified name of the MembersService's
 	// CancelPendingAccess RPC.
 	MembersServiceCancelPendingAccessProcedure = "/tempestvideo.v1.MembersService/CancelPendingAccess"
@@ -524,6 +527,7 @@ type MembersServiceClient interface {
 	AddInstallationMember(context.Context, *connect.Request[tempestvideov1.AddInstallationMemberRequest]) (*connect.Response[tempestvideov1.AddInstallationMemberResponse], error)
 	UpdateInstallationMember(context.Context, *connect.Request[tempestvideov1.UpdateInstallationMemberRequest]) (*connect.Response[tempestvideov1.UpdateInstallationMemberResponse], error)
 	RemoveInstallationMember(context.Context, *connect.Request[tempestvideov1.RemoveInstallationMemberRequest]) (*connect.Response[tempestvideov1.RemoveInstallationMemberResponse], error)
+	UpdatePendingAccess(context.Context, *connect.Request[tempestvideov1.UpdatePendingAccessRequest]) (*connect.Response[tempestvideov1.UpdatePendingAccessResponse], error)
 	CancelPendingAccess(context.Context, *connect.Request[tempestvideov1.CancelPendingAccessRequest]) (*connect.Response[tempestvideov1.CancelPendingAccessResponse], error)
 }
 
@@ -580,6 +584,12 @@ func NewMembersServiceClient(httpClient connect.HTTPClient, baseURL string, opts
 			connect.WithSchema(membersServiceMethods.ByName("RemoveInstallationMember")),
 			connect.WithClientOptions(opts...),
 		),
+		updatePendingAccess: connect.NewClient[tempestvideov1.UpdatePendingAccessRequest, tempestvideov1.UpdatePendingAccessResponse](
+			httpClient,
+			baseURL+MembersServiceUpdatePendingAccessProcedure,
+			connect.WithSchema(membersServiceMethods.ByName("UpdatePendingAccess")),
+			connect.WithClientOptions(opts...),
+		),
 		cancelPendingAccess: connect.NewClient[tempestvideov1.CancelPendingAccessRequest, tempestvideov1.CancelPendingAccessResponse](
 			httpClient,
 			baseURL+MembersServiceCancelPendingAccessProcedure,
@@ -598,6 +608,7 @@ type membersServiceClient struct {
 	addInstallationMember    *connect.Client[tempestvideov1.AddInstallationMemberRequest, tempestvideov1.AddInstallationMemberResponse]
 	updateInstallationMember *connect.Client[tempestvideov1.UpdateInstallationMemberRequest, tempestvideov1.UpdateInstallationMemberResponse]
 	removeInstallationMember *connect.Client[tempestvideov1.RemoveInstallationMemberRequest, tempestvideov1.RemoveInstallationMemberResponse]
+	updatePendingAccess      *connect.Client[tempestvideov1.UpdatePendingAccessRequest, tempestvideov1.UpdatePendingAccessResponse]
 	cancelPendingAccess      *connect.Client[tempestvideov1.CancelPendingAccessRequest, tempestvideov1.CancelPendingAccessResponse]
 }
 
@@ -636,6 +647,11 @@ func (c *membersServiceClient) RemoveInstallationMember(ctx context.Context, req
 	return c.removeInstallationMember.CallUnary(ctx, req)
 }
 
+// UpdatePendingAccess calls tempestvideo.v1.MembersService.UpdatePendingAccess.
+func (c *membersServiceClient) UpdatePendingAccess(ctx context.Context, req *connect.Request[tempestvideov1.UpdatePendingAccessRequest]) (*connect.Response[tempestvideov1.UpdatePendingAccessResponse], error) {
+	return c.updatePendingAccess.CallUnary(ctx, req)
+}
+
 // CancelPendingAccess calls tempestvideo.v1.MembersService.CancelPendingAccess.
 func (c *membersServiceClient) CancelPendingAccess(ctx context.Context, req *connect.Request[tempestvideov1.CancelPendingAccessRequest]) (*connect.Response[tempestvideov1.CancelPendingAccessResponse], error) {
 	return c.cancelPendingAccess.CallUnary(ctx, req)
@@ -650,6 +666,7 @@ type MembersServiceHandler interface {
 	AddInstallationMember(context.Context, *connect.Request[tempestvideov1.AddInstallationMemberRequest]) (*connect.Response[tempestvideov1.AddInstallationMemberResponse], error)
 	UpdateInstallationMember(context.Context, *connect.Request[tempestvideov1.UpdateInstallationMemberRequest]) (*connect.Response[tempestvideov1.UpdateInstallationMemberResponse], error)
 	RemoveInstallationMember(context.Context, *connect.Request[tempestvideov1.RemoveInstallationMemberRequest]) (*connect.Response[tempestvideov1.RemoveInstallationMemberResponse], error)
+	UpdatePendingAccess(context.Context, *connect.Request[tempestvideov1.UpdatePendingAccessRequest]) (*connect.Response[tempestvideov1.UpdatePendingAccessResponse], error)
 	CancelPendingAccess(context.Context, *connect.Request[tempestvideov1.CancelPendingAccessRequest]) (*connect.Response[tempestvideov1.CancelPendingAccessResponse], error)
 }
 
@@ -702,6 +719,12 @@ func NewMembersServiceHandler(svc MembersServiceHandler, opts ...connect.Handler
 		connect.WithSchema(membersServiceMethods.ByName("RemoveInstallationMember")),
 		connect.WithHandlerOptions(opts...),
 	)
+	membersServiceUpdatePendingAccessHandler := connect.NewUnaryHandler(
+		MembersServiceUpdatePendingAccessProcedure,
+		svc.UpdatePendingAccess,
+		connect.WithSchema(membersServiceMethods.ByName("UpdatePendingAccess")),
+		connect.WithHandlerOptions(opts...),
+	)
 	membersServiceCancelPendingAccessHandler := connect.NewUnaryHandler(
 		MembersServiceCancelPendingAccessProcedure,
 		svc.CancelPendingAccess,
@@ -724,6 +747,8 @@ func NewMembersServiceHandler(svc MembersServiceHandler, opts ...connect.Handler
 			membersServiceUpdateInstallationMemberHandler.ServeHTTP(w, r)
 		case MembersServiceRemoveInstallationMemberProcedure:
 			membersServiceRemoveInstallationMemberHandler.ServeHTTP(w, r)
+		case MembersServiceUpdatePendingAccessProcedure:
+			membersServiceUpdatePendingAccessHandler.ServeHTTP(w, r)
 		case MembersServiceCancelPendingAccessProcedure:
 			membersServiceCancelPendingAccessHandler.ServeHTTP(w, r)
 		default:
@@ -761,6 +786,10 @@ func (UnimplementedMembersServiceHandler) UpdateInstallationMember(context.Conte
 
 func (UnimplementedMembersServiceHandler) RemoveInstallationMember(context.Context, *connect.Request[tempestvideov1.RemoveInstallationMemberRequest]) (*connect.Response[tempestvideov1.RemoveInstallationMemberResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.MembersService.RemoveInstallationMember is not implemented"))
+}
+
+func (UnimplementedMembersServiceHandler) UpdatePendingAccess(context.Context, *connect.Request[tempestvideov1.UpdatePendingAccessRequest]) (*connect.Response[tempestvideov1.UpdatePendingAccessResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.MembersService.UpdatePendingAccess is not implemented"))
 }
 
 func (UnimplementedMembersServiceHandler) CancelPendingAccess(context.Context, *connect.Request[tempestvideov1.CancelPendingAccessRequest]) (*connect.Response[tempestvideov1.CancelPendingAccessResponse], error) {
