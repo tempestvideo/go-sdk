@@ -43,6 +43,8 @@ const (
 	ChannelsServiceName = "tempestvideo.v1.ChannelsService"
 	// DevicesServiceName is the fully-qualified name of the DevicesService service.
 	DevicesServiceName = "tempestvideo.v1.DevicesService"
+	// AuditServiceName is the fully-qualified name of the AuditService service.
+	AuditServiceName = "tempestvideo.v1.AuditService"
 	// ApiKeysServiceName is the fully-qualified name of the ApiKeysService service.
 	ApiKeysServiceName = "tempestvideo.v1.ApiKeysService"
 )
@@ -82,6 +84,12 @@ const (
 	// InstallationsServiceUpdateInstallationProcedure is the fully-qualified name of the
 	// InstallationsService's UpdateInstallation RPC.
 	InstallationsServiceUpdateInstallationProcedure = "/tempestvideo.v1.InstallationsService/UpdateInstallation"
+	// InstallationsServiceArchiveInstallationProcedure is the fully-qualified name of the
+	// InstallationsService's ArchiveInstallation RPC.
+	InstallationsServiceArchiveInstallationProcedure = "/tempestvideo.v1.InstallationsService/ArchiveInstallation"
+	// InstallationsServiceRestoreInstallationProcedure is the fully-qualified name of the
+	// InstallationsService's RestoreInstallation RPC.
+	InstallationsServiceRestoreInstallationProcedure = "/tempestvideo.v1.InstallationsService/RestoreInstallation"
 	// InstallationsServiceDeleteInstallationProcedure is the fully-qualified name of the
 	// InstallationsService's DeleteInstallation RPC.
 	InstallationsServiceDeleteInstallationProcedure = "/tempestvideo.v1.InstallationsService/DeleteInstallation"
@@ -172,6 +180,9 @@ const (
 	// DevicesServiceGetDeviceTaskProcedure is the fully-qualified name of the DevicesService's
 	// GetDeviceTask RPC.
 	DevicesServiceGetDeviceTaskProcedure = "/tempestvideo.v1.DevicesService/GetDeviceTask"
+	// AuditServiceListAuditEventsProcedure is the fully-qualified name of the AuditService's
+	// ListAuditEvents RPC.
+	AuditServiceListAuditEventsProcedure = "/tempestvideo.v1.AuditService/ListAuditEvents"
 	// ApiKeysServiceCreateApiKeyProcedure is the fully-qualified name of the ApiKeysService's
 	// CreateApiKey RPC.
 	ApiKeysServiceCreateApiKeyProcedure = "/tempestvideo.v1.ApiKeysService/CreateApiKey"
@@ -407,6 +418,8 @@ type InstallationsServiceClient interface {
 	GetInstallation(context.Context, *connect.Request[tempestvideov1.GetInstallationRequest]) (*connect.Response[tempestvideov1.GetInstallationResponse], error)
 	CreateInstallation(context.Context, *connect.Request[tempestvideov1.CreateInstallationRequest]) (*connect.Response[tempestvideov1.CreateInstallationResponse], error)
 	UpdateInstallation(context.Context, *connect.Request[tempestvideov1.UpdateInstallationRequest]) (*connect.Response[tempestvideov1.UpdateInstallationResponse], error)
+	ArchiveInstallation(context.Context, *connect.Request[tempestvideov1.ArchiveInstallationRequest]) (*connect.Response[tempestvideov1.ArchiveInstallationResponse], error)
+	RestoreInstallation(context.Context, *connect.Request[tempestvideov1.RestoreInstallationRequest]) (*connect.Response[tempestvideov1.RestoreInstallationResponse], error)
 	DeleteInstallation(context.Context, *connect.Request[tempestvideov1.DeleteInstallationRequest]) (*connect.Response[tempestvideov1.DeleteInstallationResponse], error)
 }
 
@@ -445,6 +458,18 @@ func NewInstallationsServiceClient(httpClient connect.HTTPClient, baseURL string
 			connect.WithSchema(installationsServiceMethods.ByName("UpdateInstallation")),
 			connect.WithClientOptions(opts...),
 		),
+		archiveInstallation: connect.NewClient[tempestvideov1.ArchiveInstallationRequest, tempestvideov1.ArchiveInstallationResponse](
+			httpClient,
+			baseURL+InstallationsServiceArchiveInstallationProcedure,
+			connect.WithSchema(installationsServiceMethods.ByName("ArchiveInstallation")),
+			connect.WithClientOptions(opts...),
+		),
+		restoreInstallation: connect.NewClient[tempestvideov1.RestoreInstallationRequest, tempestvideov1.RestoreInstallationResponse](
+			httpClient,
+			baseURL+InstallationsServiceRestoreInstallationProcedure,
+			connect.WithSchema(installationsServiceMethods.ByName("RestoreInstallation")),
+			connect.WithClientOptions(opts...),
+		),
 		deleteInstallation: connect.NewClient[tempestvideov1.DeleteInstallationRequest, tempestvideov1.DeleteInstallationResponse](
 			httpClient,
 			baseURL+InstallationsServiceDeleteInstallationProcedure,
@@ -456,11 +481,13 @@ func NewInstallationsServiceClient(httpClient connect.HTTPClient, baseURL string
 
 // installationsServiceClient implements InstallationsServiceClient.
 type installationsServiceClient struct {
-	listInstallations  *connect.Client[tempestvideov1.ListInstallationsRequest, tempestvideov1.ListInstallationsResponse]
-	getInstallation    *connect.Client[tempestvideov1.GetInstallationRequest, tempestvideov1.GetInstallationResponse]
-	createInstallation *connect.Client[tempestvideov1.CreateInstallationRequest, tempestvideov1.CreateInstallationResponse]
-	updateInstallation *connect.Client[tempestvideov1.UpdateInstallationRequest, tempestvideov1.UpdateInstallationResponse]
-	deleteInstallation *connect.Client[tempestvideov1.DeleteInstallationRequest, tempestvideov1.DeleteInstallationResponse]
+	listInstallations   *connect.Client[tempestvideov1.ListInstallationsRequest, tempestvideov1.ListInstallationsResponse]
+	getInstallation     *connect.Client[tempestvideov1.GetInstallationRequest, tempestvideov1.GetInstallationResponse]
+	createInstallation  *connect.Client[tempestvideov1.CreateInstallationRequest, tempestvideov1.CreateInstallationResponse]
+	updateInstallation  *connect.Client[tempestvideov1.UpdateInstallationRequest, tempestvideov1.UpdateInstallationResponse]
+	archiveInstallation *connect.Client[tempestvideov1.ArchiveInstallationRequest, tempestvideov1.ArchiveInstallationResponse]
+	restoreInstallation *connect.Client[tempestvideov1.RestoreInstallationRequest, tempestvideov1.RestoreInstallationResponse]
+	deleteInstallation  *connect.Client[tempestvideov1.DeleteInstallationRequest, tempestvideov1.DeleteInstallationResponse]
 }
 
 // ListInstallations calls tempestvideo.v1.InstallationsService.ListInstallations.
@@ -483,6 +510,16 @@ func (c *installationsServiceClient) UpdateInstallation(ctx context.Context, req
 	return c.updateInstallation.CallUnary(ctx, req)
 }
 
+// ArchiveInstallation calls tempestvideo.v1.InstallationsService.ArchiveInstallation.
+func (c *installationsServiceClient) ArchiveInstallation(ctx context.Context, req *connect.Request[tempestvideov1.ArchiveInstallationRequest]) (*connect.Response[tempestvideov1.ArchiveInstallationResponse], error) {
+	return c.archiveInstallation.CallUnary(ctx, req)
+}
+
+// RestoreInstallation calls tempestvideo.v1.InstallationsService.RestoreInstallation.
+func (c *installationsServiceClient) RestoreInstallation(ctx context.Context, req *connect.Request[tempestvideov1.RestoreInstallationRequest]) (*connect.Response[tempestvideov1.RestoreInstallationResponse], error) {
+	return c.restoreInstallation.CallUnary(ctx, req)
+}
+
 // DeleteInstallation calls tempestvideo.v1.InstallationsService.DeleteInstallation.
 func (c *installationsServiceClient) DeleteInstallation(ctx context.Context, req *connect.Request[tempestvideov1.DeleteInstallationRequest]) (*connect.Response[tempestvideov1.DeleteInstallationResponse], error) {
 	return c.deleteInstallation.CallUnary(ctx, req)
@@ -495,6 +532,8 @@ type InstallationsServiceHandler interface {
 	GetInstallation(context.Context, *connect.Request[tempestvideov1.GetInstallationRequest]) (*connect.Response[tempestvideov1.GetInstallationResponse], error)
 	CreateInstallation(context.Context, *connect.Request[tempestvideov1.CreateInstallationRequest]) (*connect.Response[tempestvideov1.CreateInstallationResponse], error)
 	UpdateInstallation(context.Context, *connect.Request[tempestvideov1.UpdateInstallationRequest]) (*connect.Response[tempestvideov1.UpdateInstallationResponse], error)
+	ArchiveInstallation(context.Context, *connect.Request[tempestvideov1.ArchiveInstallationRequest]) (*connect.Response[tempestvideov1.ArchiveInstallationResponse], error)
+	RestoreInstallation(context.Context, *connect.Request[tempestvideov1.RestoreInstallationRequest]) (*connect.Response[tempestvideov1.RestoreInstallationResponse], error)
 	DeleteInstallation(context.Context, *connect.Request[tempestvideov1.DeleteInstallationRequest]) (*connect.Response[tempestvideov1.DeleteInstallationResponse], error)
 }
 
@@ -529,6 +568,18 @@ func NewInstallationsServiceHandler(svc InstallationsServiceHandler, opts ...con
 		connect.WithSchema(installationsServiceMethods.ByName("UpdateInstallation")),
 		connect.WithHandlerOptions(opts...),
 	)
+	installationsServiceArchiveInstallationHandler := connect.NewUnaryHandler(
+		InstallationsServiceArchiveInstallationProcedure,
+		svc.ArchiveInstallation,
+		connect.WithSchema(installationsServiceMethods.ByName("ArchiveInstallation")),
+		connect.WithHandlerOptions(opts...),
+	)
+	installationsServiceRestoreInstallationHandler := connect.NewUnaryHandler(
+		InstallationsServiceRestoreInstallationProcedure,
+		svc.RestoreInstallation,
+		connect.WithSchema(installationsServiceMethods.ByName("RestoreInstallation")),
+		connect.WithHandlerOptions(opts...),
+	)
 	installationsServiceDeleteInstallationHandler := connect.NewUnaryHandler(
 		InstallationsServiceDeleteInstallationProcedure,
 		svc.DeleteInstallation,
@@ -545,6 +596,10 @@ func NewInstallationsServiceHandler(svc InstallationsServiceHandler, opts ...con
 			installationsServiceCreateInstallationHandler.ServeHTTP(w, r)
 		case InstallationsServiceUpdateInstallationProcedure:
 			installationsServiceUpdateInstallationHandler.ServeHTTP(w, r)
+		case InstallationsServiceArchiveInstallationProcedure:
+			installationsServiceArchiveInstallationHandler.ServeHTTP(w, r)
+		case InstallationsServiceRestoreInstallationProcedure:
+			installationsServiceRestoreInstallationHandler.ServeHTTP(w, r)
 		case InstallationsServiceDeleteInstallationProcedure:
 			installationsServiceDeleteInstallationHandler.ServeHTTP(w, r)
 		default:
@@ -570,6 +625,14 @@ func (UnimplementedInstallationsServiceHandler) CreateInstallation(context.Conte
 
 func (UnimplementedInstallationsServiceHandler) UpdateInstallation(context.Context, *connect.Request[tempestvideov1.UpdateInstallationRequest]) (*connect.Response[tempestvideov1.UpdateInstallationResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.InstallationsService.UpdateInstallation is not implemented"))
+}
+
+func (UnimplementedInstallationsServiceHandler) ArchiveInstallation(context.Context, *connect.Request[tempestvideov1.ArchiveInstallationRequest]) (*connect.Response[tempestvideov1.ArchiveInstallationResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.InstallationsService.ArchiveInstallation is not implemented"))
+}
+
+func (UnimplementedInstallationsServiceHandler) RestoreInstallation(context.Context, *connect.Request[tempestvideov1.RestoreInstallationRequest]) (*connect.Response[tempestvideov1.RestoreInstallationResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.InstallationsService.RestoreInstallation is not implemented"))
 }
 
 func (UnimplementedInstallationsServiceHandler) DeleteInstallation(context.Context, *connect.Request[tempestvideov1.DeleteInstallationRequest]) (*connect.Response[tempestvideov1.DeleteInstallationResponse], error) {
@@ -1504,6 +1567,76 @@ func (UnimplementedDevicesServiceHandler) ProvisionDevice(context.Context, *conn
 
 func (UnimplementedDevicesServiceHandler) GetDeviceTask(context.Context, *connect.Request[tempestvideov1.GetDeviceTaskRequest]) (*connect.Response[tempestvideov1.GetDeviceTaskResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.DevicesService.GetDeviceTask is not implemented"))
+}
+
+// AuditServiceClient is a client for the tempestvideo.v1.AuditService service.
+type AuditServiceClient interface {
+	ListAuditEvents(context.Context, *connect.Request[tempestvideov1.ListAuditEventsRequest]) (*connect.Response[tempestvideov1.ListAuditEventsResponse], error)
+}
+
+// NewAuditServiceClient constructs a client for the tempestvideo.v1.AuditService service. By
+// default, it uses the Connect protocol with the binary Protobuf Codec, asks for gzipped responses,
+// and sends uncompressed requests. To use the gRPC or gRPC-Web protocols, supply the
+// connect.WithGRPC() or connect.WithGRPCWeb() options.
+//
+// The URL supplied here should be the base URL for the Connect or gRPC server (for example,
+// http://api.acme.com or https://acme.com/grpc).
+func NewAuditServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) AuditServiceClient {
+	baseURL = strings.TrimRight(baseURL, "/")
+	auditServiceMethods := tempestvideov1.File_tempestvideo_v1_api_proto.Services().ByName("AuditService").Methods()
+	return &auditServiceClient{
+		listAuditEvents: connect.NewClient[tempestvideov1.ListAuditEventsRequest, tempestvideov1.ListAuditEventsResponse](
+			httpClient,
+			baseURL+AuditServiceListAuditEventsProcedure,
+			connect.WithSchema(auditServiceMethods.ByName("ListAuditEvents")),
+			connect.WithClientOptions(opts...),
+		),
+	}
+}
+
+// auditServiceClient implements AuditServiceClient.
+type auditServiceClient struct {
+	listAuditEvents *connect.Client[tempestvideov1.ListAuditEventsRequest, tempestvideov1.ListAuditEventsResponse]
+}
+
+// ListAuditEvents calls tempestvideo.v1.AuditService.ListAuditEvents.
+func (c *auditServiceClient) ListAuditEvents(ctx context.Context, req *connect.Request[tempestvideov1.ListAuditEventsRequest]) (*connect.Response[tempestvideov1.ListAuditEventsResponse], error) {
+	return c.listAuditEvents.CallUnary(ctx, req)
+}
+
+// AuditServiceHandler is an implementation of the tempestvideo.v1.AuditService service.
+type AuditServiceHandler interface {
+	ListAuditEvents(context.Context, *connect.Request[tempestvideov1.ListAuditEventsRequest]) (*connect.Response[tempestvideov1.ListAuditEventsResponse], error)
+}
+
+// NewAuditServiceHandler builds an HTTP handler from the service implementation. It returns the
+// path on which to mount the handler and the handler itself.
+//
+// By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
+// and JSON codecs. They also support gzip compression.
+func NewAuditServiceHandler(svc AuditServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	auditServiceMethods := tempestvideov1.File_tempestvideo_v1_api_proto.Services().ByName("AuditService").Methods()
+	auditServiceListAuditEventsHandler := connect.NewUnaryHandler(
+		AuditServiceListAuditEventsProcedure,
+		svc.ListAuditEvents,
+		connect.WithSchema(auditServiceMethods.ByName("ListAuditEvents")),
+		connect.WithHandlerOptions(opts...),
+	)
+	return "/tempestvideo.v1.AuditService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		switch r.URL.Path {
+		case AuditServiceListAuditEventsProcedure:
+			auditServiceListAuditEventsHandler.ServeHTTP(w, r)
+		default:
+			http.NotFound(w, r)
+		}
+	})
+}
+
+// UnimplementedAuditServiceHandler returns CodeUnimplemented from all methods.
+type UnimplementedAuditServiceHandler struct{}
+
+func (UnimplementedAuditServiceHandler) ListAuditEvents(context.Context, *connect.Request[tempestvideov1.ListAuditEventsRequest]) (*connect.Response[tempestvideov1.ListAuditEventsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("tempestvideo.v1.AuditService.ListAuditEvents is not implemented"))
 }
 
 // ApiKeysServiceClient is a client for the tempestvideo.v1.ApiKeysService service.
